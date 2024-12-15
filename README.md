@@ -1,6 +1,2 @@
----
-description: Python basic
----
-
-# Python
+# Study
 
