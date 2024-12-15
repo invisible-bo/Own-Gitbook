@@ -1,5 +1,5 @@
 ---
-description: use bash
+description: use bash or wsl in windows
 ---
 
 # Linux basic commands
