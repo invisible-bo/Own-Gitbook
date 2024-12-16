@@ -49,7 +49,7 @@ gir commit -m "commit message" # Staging Area to Local Repository(committed)
 # u = upstream. connect local branch and remote branch
 # 최초 push할때 upstream 설정 이후 git push로 간단하게 사용
 <strong>
-</strong><strong>git push # Local Repository to Remote Repository 
+</strong><strong>git push
 </strong></code></pre>
 
 ***
@@ -89,9 +89,6 @@ git remote add origin {New repository https}
 # https주소를 origin에 할당(관례)
 
 git push -u origin main(master) 
-# Local Repository to Remote Repository 
-# u = upstream. connect local branch and remote branch
-# 최초 push할때 upstream 설정 이후 git push로 간단하게 사용
 
 git push 
 ```
@@ -114,8 +111,12 @@ git clone {repository https}
 
 git push -u origin main
 
+git push
+
 git pull
+
 open . # current folder open 
+
 start . # current folder open
 ```
 
