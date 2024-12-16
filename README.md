@@ -1,2 +1,2 @@
-# Study
+# Study own daily
 
