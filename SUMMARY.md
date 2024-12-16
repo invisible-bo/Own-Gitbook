@@ -10,3 +10,6 @@
     * [Marksdown](study/git-and-github/marksdown.md)
     * [Linux basic commands](study/git-and-github/linux-basic-commands.md)
     * [Git basic](study/git-and-github/git-basic.md)
+  * [Machine learning](study/machine-learning/README.md)
+    * [Machine learning types](study/machine-learning/machine-learning-types.md)
+    * [Virtual Environment](study/machine-learning/virtual-environment.md)
