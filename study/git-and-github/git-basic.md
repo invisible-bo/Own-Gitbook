@@ -1,3 +1,7 @@
+---
+description: How to commit git
+---
+
 # Git basic
 
 * ## Repository
@@ -22,7 +26,7 @@ git init #make current repository .git폴더 생성(hidden folder)
 
 * commit들이 저장되는 곳
 
-
+***
 
 * ## Command
 
@@ -58,8 +62,63 @@ git log --graph # 시각적으로 보여줌
 ```
 
 {% hint style="info" %}
-commit된 파일을 수정 후 git status로 확인 시 modified파일로 뜸
+commit된 파일을 수정 후 git status로 확인 시 modified 파일로 뜸
 {% endhint %}
+
+***
+
+## Local Repository → Remote Repository
+
+commit기반으로 연결
+
+* Github에서 create New repository
+
+```bash
+git remote add origin {New repository https}
+# https주소를 origin에 할당(관례)
+
+git branch -M main(master)
+# master 를 main으로 변경
+
+git push -u origin main(master) 
+# u = upstream
+```
+
+
+
+## Remote Repository → Local Repository&#x20;
+
+Clone
+
+* Github에서 Repository 선택
+
+```bash
+git clone {repository https}
+
+Local Repository에서 파일생성 후 git add → git commit까지 시켰다면
+git push로 바로 업데이트
+
+open . # current folder open 
+start . # current folder open
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

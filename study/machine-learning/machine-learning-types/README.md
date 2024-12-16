@@ -14,7 +14,7 @@
    \- ex) 스팸 메일 분류, 암 진단\
    \- 알고리즘 ex) 로지스틱 회귀, 의사결정 트리(Decision tree), 랜덤 포레스트, SVM, Naive Bayes
 
-###
+***
 
 ### 2. 비지도 학습(Unsupervised learning)
 
@@ -28,8 +28,9 @@
 2. 차원 축소(Dimensionality Reduction)\
    \- 고차원의 데이터를 저차원으로 변환하여 중요한 정보만 남김\
    \- ex) 데이터 시각화, 노이즈 제거\
-   \- 알고리즘 ex) PCA(주 성분 분석), t-SNE, UMAP.\
+   \- 알고리즘 ex) PCA(주 성분 분석), t-SNE, UMAP.
 
+***
 
 ### 3. 강화 학습(Reinforcement Learning)
 
@@ -56,7 +57,7 @@
 * 자율 주행 자동차
 * 로봇 제어
 
-
+***
 
 ### 4. 앙상블 학습(Ensemble Learning)
 
@@ -68,7 +69,7 @@
 * 배깅(Bagging)\
   여러 모델을 독립적으로 학습 시키고, 예측을 평균 내거나 다수결 투표로 최종 예측
 
-
+***
 
 ### 5. 딥 러닝(Deep Learning)
 
