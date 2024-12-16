@@ -1,13 +1,14 @@
 ---
 description: How to commit git
+icon: square-git
 ---
 
 # Git basic
 
-* ## Repository
+* ## Local Repository
 
 ```python
-git init #make current repository .git폴더 생성(hidden folder)
+git init #make Local Repository .git폴더 생성(hidden folder)
 ```
 
 * ## Commit
@@ -22,14 +23,6 @@ git init #make current repository .git폴더 생성(hidden folder)
 
 * commit으로 남기고 싶은, 특정 버전으로 관리하고 싶은 파일이 모여있는 곳
 
-3. Repository
-
-* commit들이 저장되는 곳
-
-***
-
-* ## Command
-
 ```python
 git add {file name} # add to Staging Area
         # add하지 않은 file은 untracked  상태
@@ -38,10 +31,24 @@ git add {file name1} {file name2} # 여러개의 파일 add
 git add . #현재 folder내의 모든 file들을 Staging Area로 add
 ```
 
+3. Local Repository
+
+* commit들이 저장되는 곳
+
 ```python
 git commit     
-gir commit -m "commit message" # Staging Area to Repository(committed)
+gir commit -m "commit message" # Staging Area to Local Repository(committed)
 ```
+
+4. Remote Repository&#x20;
+
+* GitHub과 같은 서버에 있는 저장소
+
+```bash
+git push # Local Repository to Remote Repository 
+```
+
+***
 
 ```python
 git status # view working directory and staging area status
@@ -81,12 +88,13 @@ git branch -M main(master)
 # master 를 main으로 변경
 
 git push -u origin main(master) 
+# Local Repository to Remote Repository 
 # u = upstream. connect local branch and remote branch
-#upstream 설정 후 git push git pull로 간단하게 사용
+# 최초 push할때 upstream 설정 이후 git push git pull로 간단하게 사용
+
+
 git push 
 git pull
-
-
 ```
 
 
