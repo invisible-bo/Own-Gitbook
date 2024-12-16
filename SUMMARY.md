@@ -6,6 +6,7 @@
     * [Python collection data types](study/python/python-collection-data-types.md)
     * [Python Condition](study/python/python-condition.md)
     * [Python Loop](study/python/python-loop.md)
+    * [-Virtual Environment](study/python/virtual-environment.md)
   * [Git & Github](study/git-and-github/README.md)
     * [Marksdown](study/git-and-github/marksdown.md)
     * [Linux basic commands](study/git-and-github/linux-basic-commands.md)
@@ -13,4 +14,3 @@
   * [Machine learning](study/machine-learning/README.md)
     * [Machine learning types](study/machine-learning/machine-learning-types/README.md)
       * [Supervised learning](study/machine-learning/machine-learning-types/supervised-learning.md)
-    * [Virtual Environment](study/machine-learning/virtual-environment.md)
