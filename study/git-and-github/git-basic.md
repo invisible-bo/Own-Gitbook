@@ -81,7 +81,12 @@ git branch -M main(master)
 # master 를 main으로 변경
 
 git push -u origin main(master) 
-# u = upstream
+# u = upstream. connect local branch and remote branch
+#upstream 설정 후 git push git pull로 간단하게 사용
+git push 
+git pull
+
+
 ```
 
 
@@ -94,10 +99,6 @@ Clone
 
 ```bash
 git clone {repository https}
-
-Local Repository에서 파일생성 후 git add → git commit까지 시켰다면
-git push로 바로 업데이트
-
 open . # current folder open 
 start . # current folder open
 ```
