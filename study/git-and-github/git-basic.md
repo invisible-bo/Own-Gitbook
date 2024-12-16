@@ -1,6 +1,6 @@
 ---
-description: How to commit git
 icon: square-git
+description: How to commit git
 ---
 
 # Git basic
@@ -44,9 +44,13 @@ gir commit -m "commit message" # Staging Area to Local Repository(committed)
 
 * GitHub과 같은 서버에 있는 저장소
 
-```bash
-git push # Local Repository to Remote Repository 
-```
+<pre class="language-bash"><code class="lang-bash">git push -u origin main(master) 
+# Local Repository to Remote Repository 
+# u = upstream. connect local branch and remote branch
+# 최초 push할때 upstream 설정 이후 git push로 간단하게 사용
+<strong>
+</strong><strong>git push # Local Repository to Remote Repository 
+</strong></code></pre>
 
 ***
 
@@ -74,7 +78,7 @@ commit된 파일을 수정 후 git status로 확인 시 modified 파일로 뜸
 
 ***
 
-## Local Repository → Remote Repository
+## connect Local Repository with Remote Repository
 
 commit기반으로 연결
 
@@ -84,20 +88,20 @@ commit기반으로 연결
 git remote add origin {New repository https}
 # https주소를 origin에 할당(관례)
 
-git branch -M main(master)
-# master 를 main으로 변경
-
 git push -u origin main(master) 
 # Local Repository to Remote Repository 
 # u = upstream. connect local branch and remote branch
-# 최초 push할때 upstream 설정 이후 git push git pull로 간단하게 사용
-
+# 최초 push할때 upstream 설정 이후 git push로 간단하게 사용
 
 git push 
-git pull
 ```
 
-
+{% hint style="info" %}
+```
+git branch -M main(master)
+# master 를 main으로 변경
+```
+{% endhint %}
 
 ## Remote Repository → Local Repository&#x20;
 
@@ -107,6 +111,10 @@ Clone
 
 ```bash
 git clone {repository https}
+
+git push -u origin main
+
+git pull
 open . # current folder open 
 start . # current folder open
 ```
