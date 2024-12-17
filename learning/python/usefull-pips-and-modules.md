@@ -1,3 +1,7 @@
+---
+icon: forklift
+---
+
 # Usefull Pips & Modules
 
 ## Pygame
@@ -19,12 +23,29 @@ pygame.init() # Pygame 초기화(반드시필요)
 <strong>{variable name}.play()
 </strong><strong># play sound file
 </strong>
+variable name}.play(-1)
+# play sound file Infinite loop
+
 {variable name}.stop()
 # stop sound file
 
-{variable name}.fadeout(num)
-# (num)ms동안 fadeout
-
 pygame.mixer.stop()
 # stop playing all sound files
+
+{variable name}.fadeout(num)
+# (num)ms동안 fadeout   1000ms = 1second
 </code></pre>
+
+
+
+***
+
+## Time Module
+
+```python
+import time 
+
+time.sleep(second) 
+# n second동안 stop
+```
+

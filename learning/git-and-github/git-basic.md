@@ -122,17 +122,11 @@ open . # current folder open
 start . # current folder open
 ```
 
+{% hint style="info" %}
+{git folder name} add {folder name}/&#x20;
 
-
-
-
-
-
-
-
-
-
-
+\#이미 초기화된 상위 git폴더에&#x20;
+{% endhint %}
 
 
 
