@@ -23,7 +23,7 @@ pygame.init() # Pygame 초기화(반드시필요)
 <strong>{variable name}.play()
 </strong><strong># play sound file
 </strong>
-variable name}.play(-1)
+{variable name}.play(-1)
 # play sound file Infinite loop
 
 {variable name}.stop()
