@@ -1,9 +1,11 @@
 ---
-icon: square-git
+icon: github
 description: How to commit git
 ---
 
 # Git basic
+
+
 
 * ## Local Repository
 

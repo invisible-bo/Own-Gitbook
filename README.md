@@ -1,2 +1,6 @@
-# Study
+---
+icon: wreath-laurel
+---
+
+# Learning
 
