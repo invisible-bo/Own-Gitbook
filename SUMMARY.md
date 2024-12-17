@@ -7,6 +7,7 @@
     * [Python Condition](learning/python/python-condition.md)
     * [Python Loop](learning/python/python-loop.md)
     * [-Virtual Environment](learning/python/virtual-environment.md)
+    * [Usefull Pips & Modules](learning/python/usefull-pips-and-modules.md)
   * [Git & Github](learning/git-and-github/README.md)
     * [Marksdown](learning/git-and-github/marksdown.md)
     * [Linux basic commands](learning/git-and-github/linux-basic-commands.md)
