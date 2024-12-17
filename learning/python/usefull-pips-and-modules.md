@@ -45,7 +45,7 @@ pygame.mixer.stop()
 ```python
 import time 
 
-time.sleep(second) 
-# n second동안 stop
+time.sleep(n) 
+# stop while n seconds 
 ```
 
