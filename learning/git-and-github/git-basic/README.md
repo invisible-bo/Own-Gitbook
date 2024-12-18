@@ -128,11 +128,19 @@ start . # current folder open
 \#이미 초기화된 상위 git폴더에&#x20;
 {% endhint %}
 
+***
 
+### Hiding file
 
+```bash
+.gitignore
+# .gitignore안에 file and folder 작성
+# 반드시 레포지토리에 만들어 놓는것이 좋음
 
+gitignore.io
 
-
+#한번 commit되면 .gitignore에 넣을 수 없음
+```
 
 
 

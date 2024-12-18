@@ -65,7 +65,7 @@ description: .md 파일로 작성
 * ## Etc
 
 ```python
-**뚱뚱하다**
+**thick**
 *기울임체*
 ~~취소선~~
 ```
