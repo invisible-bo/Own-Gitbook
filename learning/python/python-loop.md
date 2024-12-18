@@ -88,7 +88,17 @@ while True:
     print(f"You entered: {command}")
 ```
 
-
+```python
+ex)
+while True:
+    command = input("Enter a command ('quit' to stop): ").lower()
+    if command == 'quit':
+        print("Goodbye!")
+        break
+    else:
+        print("다시 입력하세요")
+        continue #명시적으로 사용. continue가 없어도 while루프라서 반복됨
+```
 
 #### time.sleep
 
