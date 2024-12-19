@@ -1,5 +1,6 @@
 ---
 icon: wreath-laurel
+noIndex: true
 cover: .gitbook/assets/matrix_cat.png
 coverY: 0
 layout:
@@ -9,7 +10,7 @@ layout:
   title:
     visible: true
   description:
-    visible: true
+    visible: false
   tableOfContents:
     visible: true
   outline:
