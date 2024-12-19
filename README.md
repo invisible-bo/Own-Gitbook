@@ -1,7 +1,7 @@
 ---
 icon: wreath-laurel
 noIndex: true
-cover: .gitbook/assets/matrix_cat.png
+cover: .gitbook/assets/brain.jpeg
 coverY: 0
 layout:
   cover:
