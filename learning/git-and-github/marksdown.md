@@ -37,8 +37,11 @@ description: .md 파일로 작성
 * ## Code block
 
 ````python
-```
-```python 
+```text
+```bash
+```python
+#etc
+ 
 `code` #in line code block
 ````
 
@@ -93,7 +96,7 @@ description: .md 파일로 작성
 * ## Table
 
 ```python
-||name|age|gender|
+|name|age|gender|
 |----|----|----|
 | Bo | 35 |male|
 ```
