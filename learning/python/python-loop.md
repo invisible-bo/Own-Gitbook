@@ -12,6 +12,50 @@ for i in range(5):
 # 0, 1, 2, 3, 4
 ```
 
+* ## ex)
+
+```python
+for i in my_dict.key():
+# my_dict의 key를 반환
+for i in my_dict.value():
+# my_dict의 value를 반환
+for i in my_dict.items():
+# my_dict의 모든 (key, value) 쌍을 tuple로 반환
+for key, value in my_dict.items():
+    print(f"Key: {key}, Value: {value}")
+# items()는 각 반복에서 (key, value) 튜플을 반환하므로
+# 이를 두 개의 변수로 나눠 받을 수도 있다
+```
+
+{% hint style="info" %}
+`range:`일정한 범위의 숫자 시퀀스를 생성하는 Python의 내장 함수
+
+```python
+range(start, stop, step)
+```
+
+* `start` (선택 사항): 숫자 시퀀스의 시작 값. 기본값은 `0`.
+* `stop` (필수): 숫자 시퀀스가 끝나는 위치(해당number포함 X)
+* `step` (선택 사항): 숫자 간의 간격. 기본값은 `1`.
+
+```python
+for i in range(5):  # range(0, 5)로 해석
+    print(i) # 0,1,2,3,4
+```
+{% endhint %}
+
+!) range의 개념을 while로  구현&#x20;
+
+```python
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+# 0, 1, 2, 3, 4
+```
+
+
+
 
 
 *   ## While loop
