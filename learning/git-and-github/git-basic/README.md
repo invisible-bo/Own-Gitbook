@@ -5,23 +5,23 @@ description: How to commit git
 
 # Git basic
 
-
-
-* ## Local Repository
-
 ```python
 git init #make Local Repository .git폴더 생성(hidden folder)
 ```
 
-* ## Commit
+### Commit &#x20;
 
 현재 변경  사항을 특정 버전으로 남기는 것
 
-1. Working directory
+
+
+1. **Working directory**
 
 * 내가 실제로 작업하고 있는 디렉토리
 
-2. Staging Area
+
+
+2. **Staging Area**
 
 * commit으로 남기고 싶은, 특정 버전으로 관리하고 싶은 파일이 모여있는 곳
 
@@ -33,7 +33,7 @@ git add {file name1} {file name2} # 여러개의 파일 add
 git add . #현재 folder내의 모든 file들을 Staging Area로 add
 ```
 
-3. Local Repository
+3. **Local Repository**
 
 * commit들이 저장되는 곳
 
@@ -42,28 +42,22 @@ git commit
 gir commit -m "commit message" # Staging Area to Local Repository(committed)
 ```
 
-4. Remote Repository&#x20;
+4. **Remote Repository**&#x20;
 
 * GitHub과 같은 서버에 있는 저장소
 
-<pre class="language-bash"><code class="lang-bash">git push -u origin main(master) 
+```bash
+git push -u origin main(master) 
 # Local Repository to Remote Repository 
 # u = upstream. connect local branch and remote branch
 # 최초 push할때 upstream 설정 이후 git push로 간단하게 사용
-<strong>
-</strong><strong>git push
-</strong></code></pre>
+git push
+```
 
 ***
 
 ```python
 git status # view working directory and staging area status
-```
-
-```python
-git config --global user.name "user name" 
-git config --global user.email "user email" 
-# adding acount information to Git
 ```
 
 ```python
@@ -122,12 +116,6 @@ open . # current folder open
 start . # current folder open
 ```
 
-{% hint style="info" %}
-{git folder name} add {folder name}/&#x20;
-
-\#이미 초기화된 상위 git폴더에&#x20;
-{% endhint %}
-
 ***
 
 ### Hiding file
@@ -141,6 +129,14 @@ gitignore.io
 
 #한번 commit되면 .gitignore에 넣을 수 없음
 ```
+
+{% hint style="info" %}
+```
+git config --global user.name "user name" 
+git config --global user.email "user email" 
+# adding acount information to Git
+```
+{% endhint %}
 
 
 

@@ -150,11 +150,11 @@ UNIX 및 Linux의 Text편집기
 * Insert mode
 * Ex mode (:로 시작)
 
-<pre class="language-bash"><code class="lang-bash"><strong>i # insert mode
-</strong><strong>
-</strong><strong>vi {file name}  # 실행
-</strong>:w # save
+```bash
+vi {file name}  # 실행
+i # insert mode
+:w # save
 :q # quit
 :wq or :x #save and quit
 :q! # force quit
-</code></pre>
+```

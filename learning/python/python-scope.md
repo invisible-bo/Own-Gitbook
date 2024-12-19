@@ -7,11 +7,18 @@ description: Python의 범위
 ## 이름 검색 규칙(Name resolution)
 
 * python에서 사용되는 name(식별자)들은 이름공간(namespace)에 저장되어 있음
+
+
+
 * 아래와 같은 순서로 name을 찾아나가며, LEGB Rule이라고 부름\
+  \
   \- Local scope : 지역범위(현재 작업 중인 범위)\
+  \
   \- Enclosed scope : 지역범위  한 단계 위 범위\
+  \
   \- Global scope : 최상단에 위치한 범위\
-  \- Built-in scope : 모든 것을 담고 있는 범위   ex)print()
+  \
+  \- Built-in scope : 모든 것을 담고 있는 범위   ex)    print()
 
 ### global keyword
 

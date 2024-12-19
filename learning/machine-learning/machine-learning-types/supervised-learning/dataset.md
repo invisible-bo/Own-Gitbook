@@ -4,7 +4,7 @@ description: 데이터를 모아 놓은 전체 집합
 
 # Dataset
 
-* 여러 개의 Feature와 Label(Target)으로 구성\
+* 여러 개의 **Feature**와 **Label(Target)**&#xC73C;로 구성\
   ex) 머신러닝에서의 CSV 파일, database table, 이미지 폴더 등
 
 ex)
@@ -31,10 +31,10 @@ ex)
 
 
 
-* 학습 데이터셋에서 Feature(입력 데이터)에 대응되는 정답 또는 목표 값
-* 지도 학습(supervised learning)에서는 레이블이 반드시 필요하며, \
+* 학습 데이터셋에서 Feature(입력 데이터)에 대응되는 **정답** 또는 **목표 값**
+* **지도 학습(supervised learning)**&#xC5D0;서는 **레이블이 반드시 필요**하며, \
   모델은 Feature와 Label 간의 관계를 학습
-* 학습 후, 새로운 Feature가 주어지면 그에 맞는 Label을 예측
+* 학습 후, 새로운 Feature가 주어지면 그에 맞는 Label을 **예측**
 * 종류\
   \- 분류 문제(Classification): Label은 이산적인 값(카테고리)을 가진다\
   &#x20;   ex) 스팸 메일 분류 (스팸/스팸 아님), 숫자 인식 (0\~9)\

@@ -12,7 +12,7 @@ for i in range(5):
 # 0, 1, 2, 3, 4
 ```
 
-* ## ex)
+ex)
 
 ```python
 for i in my_dict.key():
@@ -53,8 +53,6 @@ while i < 5:
     i += 1
 # 0, 1, 2, 3, 4
 ```
-
-
 
 
 

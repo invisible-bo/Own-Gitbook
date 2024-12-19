@@ -15,7 +15,7 @@ import pygame
 pygame.init() # Pygame 초기화(반드시필요)
 ```
 
--sound part
+* sound part
 
 <pre class="language-python"><code class="lang-python">{variable name} = pygame.mixer.Sound(sound file name)
 # Importing sound file
