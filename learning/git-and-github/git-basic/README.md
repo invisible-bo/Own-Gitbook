@@ -114,6 +114,8 @@ git pull
 open . # current folder open 
 
 start . # current folder open
+
+code . # 해당 폴더에서 vscode로 open
 ```
 
 ***

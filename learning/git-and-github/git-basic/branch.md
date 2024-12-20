@@ -7,14 +7,18 @@ description: 브랜치
 ### Branch == 특정 commit을 가르키는 포인터
 
 ```bash
-git switch -c {branch name}
+git branch {branch name}
+# branch 생성
+git switch -b {branch name}
 # branch 생성과 동시에 이동
-
 git swtich {brand name}
 # 해당 branch로 이동
-
 git switch main
 # main branch로 이동
+git branch
+# check local branch
+git branch -r
+#check remote branch
 ```
 
 

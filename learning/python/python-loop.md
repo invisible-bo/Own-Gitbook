@@ -27,6 +27,10 @@ for key, value in my_dict.items():
 # 이를 두 개의 변수로 나눠 받을 수도 있다
 ```
 
+
+
+* ## Range
+
 {% hint style="info" %}
 `range:`일정한 범위의 숫자 시퀀스를 생성하는 Python의 내장 함수
 
