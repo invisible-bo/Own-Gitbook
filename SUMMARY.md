@@ -18,3 +18,4 @@
     * [Machine learning types](learning/machine-learning/machine-learning-types/README.md)
       * [Supervised learning](learning/machine-learning/machine-learning-types/supervised-learning/README.md)
         * [Dataset](learning/machine-learning/machine-learning-types/supervised-learning/dataset.md)
+    * [Page 1](learning/machine-learning/page-1.md)
