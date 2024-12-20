@@ -38,4 +38,6 @@ for number in numbers_str:
 
 
 * ## Map
+* ## lamda(무명함수)
+* ## recursive function(재귀함수)
 
