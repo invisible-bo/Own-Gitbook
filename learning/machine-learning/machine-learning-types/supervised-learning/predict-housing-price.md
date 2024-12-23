@@ -303,6 +303,8 @@ X_test_scaled = scaler.transform(X_test_cleaned)
 
 ```python
 # Standardization 표준화로 진행
+# 특성(feature)을 평균이 0이고, 
+# 분산이 1이 되도록 변환하는 작업
 from sklearn.preprocessing import StandardScaler
 
 # 표준화 객체 생성
