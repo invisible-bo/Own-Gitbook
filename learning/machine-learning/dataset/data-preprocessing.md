@@ -21,12 +21,6 @@ description: '데이터 전처리 : 데이터를 모델에 맞게 정제하고 �
 pip install scikit-learn
 ```
 
-###
-
-###
-
-###
-
 ### 1. Missing Values(결측치 처리)
 
 결측치 : 데이터셋 에서 값이 비어있거나 누락된 데이터

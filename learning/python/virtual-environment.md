@@ -1,6 +1,6 @@
 ---
-description: 가상 환경
 icon: vr-cardboard
+description: 가상 환경
 ---
 
 # Virtual Environment
@@ -9,8 +9,8 @@ icon: vr-cardboard
 python -m venv myenv
 # Creating Virtual Environment
 
-myenv\Scripts\activate
-# Activate Virtual Environment
+source .venv/Scripts/activate
+# Activate Virtual Environment(Windows MINGW64에서)
 
 source myenv/bin/activate
 # Activate Virtual Environment
@@ -18,8 +18,6 @@ source myenv/bin/activate
 deactivate
 # deactivate Virtual Environment
 ```
-
-
 
 #### pip
 
