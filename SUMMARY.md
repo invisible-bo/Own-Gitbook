@@ -8,6 +8,7 @@
     * [Python Loop](learning/python/python-loop.md)
     * [Python Function](learning/python/python-function/README.md)
       * [Python Syntactic Features](learning/python/python-function/python-syntactic-features.md)
+      * [Etc functions and method](learning/python/python-function/etc-functions-and-method.md)
     * [Python scope](learning/python/python-scope.md)
     * [Usefull Pips & Modules](learning/python/usefull-pips-and-modules.md)
     * [Virtual Environment](learning/python/virtual-environment.md)
