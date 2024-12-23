@@ -107,7 +107,7 @@ columns_to_drop = ['CHAS', 'RAD', 'B']
 
 </code></pre>
 
-### 2. 훈련 data와 테스트 data로 분리
+### 2. 훈련 Data와 테스트 Data로 분리
 
 ```python
 from sklearn.model_selection import train_test_split # data 분리작업
@@ -154,7 +154,7 @@ random\_state는 난수 생성기의 초기값(seed)을 지정
 
 
 
-## 3. data 전처리
+## 3. Data 전처리
 
 ```python
 print(X_train.isnull().sum())
@@ -280,7 +280,7 @@ print("이상치 제거 후 X_test 데이터 크기:", X_test_cleaned.shape)
 
 
 
-### Scaling(Normalization or Standardization) :  정규화 혹은 표준화
+3\) Scaling(Standardization or Normalization) : 표준화 혹은 정규화
 
 ```python
 # Standardization 표준화
