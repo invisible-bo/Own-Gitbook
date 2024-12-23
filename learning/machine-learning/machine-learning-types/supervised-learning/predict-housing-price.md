@@ -94,9 +94,7 @@ print(housing_df)
 평균값: 데이터의 합을 전체 데이터 수로 나눈 값으로, 이상치의 영향을 크게 받을 수 있음
 ```
 
-
-
-### 1. Columns 분석
+## 1. Columns Data 분석
 
 <pre class="language-python"><code class="lang-python"># CHAS, RAD, B columns가 주택가격 형성에 크게 중요하지 않다고 판단하고 제거하기로 결정
 columns_to_drop = ['CHAS', 'RAD', 'B']
@@ -107,7 +105,9 @@ columns_to_drop = ['CHAS', 'RAD', 'B']
 
 </code></pre>
 
-### 2. 훈련 Data와 테스트 Data로 분리
+***
+
+## 2. Train Data와  Test Data로 분리
 
 ```python
 from sklearn.model_selection import train_test_split # data 분리작업
@@ -152,7 +152,7 @@ random\_state는 난수 생성기의 초기값(seed)을 지정
    random\_state=42는 관습적으로 많이 사용되며, 반드시 42일 필요는 없다. 원하는 숫자를 사용해도 동일한 역할을 수행
 {% endhint %}
 
-
+***
 
 ## 3. Data 전처리
 
@@ -333,7 +333,22 @@ print(X_test_scaled_df.head())
 
 
 
-## Model training & Model Evaluation (모델학습 & 모델평가)
+4\) Feature Selection(특징선택)
+
+* 종속 변수(MEDV)와 가장 관련이 높은 변수를 식별
+* 종속 변수(MEDV)와 각 독립 변수 간 상관관계를 확인\
+  상관계수가 높은 변수는 모델 성능에 더 기여할 가능성이 크다
+
+```python
+```
+
+
+
+
+
+
+
+## 4. Model training & Model Evaluation (모델학습 & 모델평가)
 
 
 
