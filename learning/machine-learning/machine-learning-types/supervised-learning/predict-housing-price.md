@@ -628,15 +628,141 @@ print(f"의사결정 나무 평가 결과:\nMSE: {mse_tree:.2f}, MAE: {mae_tree:
     나머지 24%는 모델이 설명하지 못하는 변동성
 ```
 
+***
+
+3. 랜덤 포레스트(Random Forest)
+
+```python
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
+# 랜덤 포레스트 모델 생성
+rf_model = RandomForestRegressor(random_state=42, n_estimators=100)
+
+# 모델 학습
+rf_model.fit(X_train_selected, y_train)
+
+# 테스트 데이터 예측
+y_pred_rf = rf_model.predict(X_test_selected)
+```
+
+```python
+# 평가 지표 계산
+mse_rf = mean_squared_error(y_test, y_pred_rf)
+mae_rf = mean_absolute_error(y_test, y_pred_rf)
+r2_rf = r2_score(y_test, y_pred_rf)
+
+print(f"랜덤 포레스트 평가 결과:\nMSE: {mse_rf:.2f}, MAE: {mae_rf:.2f}, R²: {r2_rf:.2f}")
+# 랜덤 포레스트 평가 결과:
+# MSE: 6.90, MAE: 1.83, R²: 0.83
+```
+
+```
+평가 결과 해석
+
+(1) 랜덤 포레스트 모델이 주택 가격을 예측할 때 평균적으로 6.90 단위의 제곱 오차를 냄
+(2) 랜덤 포레스트 모델이 주택 가격을 예측할 때 평균적으로 약 $1830 정도의 오차가 발생
+(3) 0.83은 모델이 주택 가격 변동성의 83%를 설명할 수 있음을 의미
+```
+
+###
+
+### Model 비교
+
+| Model  | MSE   | MAE  | R^2  |
+| ------ | ----- | ---- | ---- |
+| 선형회귀   | 9.56  | 2.22 | 0.77 |
+| 의사결정나무 | 10.19 | 2.51 | 0.76 |
+| 랜덤포레스트 | 6.90  | 1.83 | 0.83 |
+
+**랜덤 포레스트 모델이 가장 우수한 성능**
+
+```python
+# 중간에 X_test_selected와 y_test의 크기 차이로 오류발생, 
+# X_test_selected와 동일한 인덱스를 사용하여 y_test를 필터링
+print("X_test_selected 크기:", X_test_selected.shape)
+print("y_test 크기:", y_test.shape)
+# 크기 확인 후
+y_test = y_test.loc[X_test_selected.index]
+```
 
 
 
+***
+
+### 결과 시각화
+
+1. 선형회귀모델
+
+* 선형회귀모델시각화는 **예측값과 실제값 비교**, **잔차 분석** 등을 통해 모델 성능을 시각적으로 평가
+
+```python
+import matplotlib.pyplot as plt
+
+# 예측값과 실제값 비교
+plt.figure(figsize=(8, 6))
+plt.scatter(y_test, y_pred, alpha=0.7, color='blue')
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], color='red', linestyle='--', linewidth=2)
+plt.xlabel("실제값 (y_test)")
+plt.ylabel("예측값 (y_pred)")
+plt.title("선형 회귀 모델: 예측값과 실제값 비교")
+plt.grid(True)
+plt.show()
+```
+
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+2. 의사결정나무&#x20;
+
+* Python의 sklearn.tree 모듈을 사용하면 의사결정 나무를 시각화
+
+<pre class="language-python"><code class="lang-python">from sklearn.tree import plot_tree
+import matplotlib.pyplot as plt
+
+<strong># 의사결정 나무 모델 생성 및 학습 (기존 모델 사용)
+</strong>tree_model = DecisionTreeRegressor(random_state=42)
+tree_model.fit(X_train_selected, y_train)
+
+# 의사결정 나무 시각화
+plt.figure(figsize=(20, 10))
+plot_tree(tree_model, feature_names=X_train_selected.columns, filled=True, rounded=True)
+plt.title("Decision Tree Visualization")
+plt.show()
+
+</code></pre>
+
+<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+```python
+from sklearn.tree import export_text # 의사결정나무텍스트기반 시각화
+
+# 트리 구조를 텍스트로 출력
+tree_rules = export_text(tree_model, feature_names=list(X_train_selected.columns))
+print(tree_rules)
+```
+
+3. 랜덤포레스트 시각화
 
 
 
+```python
+import matplotlib.pyplot as plt #랜덤포레스트 시각화
+import pandas as pd
 
+# 특성 중요도 추출
+feature_importances = pd.DataFrame({
+    'Feature': X_train_selected.columns,
+    'Importance': rf_model.feature_importances_
+}).sort_values(by='Importance', ascending=False)
 
+# 특성 중요도 시각화
+plt.figure(figsize=(10, 6))
+plt.bar(feature_importances['Feature'], feature_importances['Importance'])
+plt.xlabel('Feature')
+plt.ylabel('Importance')
+plt.title('Feature Importances from Random Forest')
+plt.show()
+```
 
-
-
+<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
