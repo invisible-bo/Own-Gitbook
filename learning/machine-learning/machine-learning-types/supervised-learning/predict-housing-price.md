@@ -339,34 +339,294 @@ print(X_test_scaled_df.head())
 * 종속 변수(MEDV)와 각 독립 변수 간 상관관계를 확인\
   상관계수가 높은 변수는 모델 성능에 더 기여할 가능성이 크다
 
+```
+1)상관관계 분석:
+종속 변수(MEDV)와 각 독립 변수 간 상관관계를 확인하여 선택/제거할 변수를 결정
+
+2)랜덤 포레스트 기반 변수 중요도 평가:
+트리 기반 모델로 변수 중요도를 계산하여 선택
+
+3)통계적 방법:
+SelectKBest 또는 RFE(Recursive Feature Elimination) 방법으로 중요한 변수를 선택
+
+4)결과 데이터 준비:
+선택된 변수만으로 새로운 데이터셋 구성
+```
+
+<pre><code><strong>1)seaborn 설치(시각화도구)
+</strong>pip install seaborn
+
+2)matplotlib : Python의 시각화 라이브러리
+matplotlib.pyplot
+
+3)plt는 그래프 생성, 설정, 표시 등의 작업을 간단히 수행할 수 있는 강력한 도구
+
+plt로 제공되는 주요 기능
+- 그래프 생성
+그래프를 생성하고 데이터를 시각화
+예: 선 그래프, 막대 그래프, 산점도, 히스토그램 등
+- 그래프 설정
+
+축(x, y)의 범위 설정, 제목, 레이블, 범례 추가
+- 그래프 표시
+
+**plt.show()를 통해 생성한 그래프를 출력**
+</code></pre>
+
+{% hint style="info" %}
+<pre><code><strong>1)히트맵 - 데이터의 상관관계 또는 행렬 데이터를 시각화
+</strong><strong>import seaborn as sns
+</strong>import matplotlib.pyplot as plt
+
+sns.heatmap(data=corr_matrix, annot=True, cmap="coolwarm")
+plt.title("Correlation Heatmap")
+plt.show()
+
+2)박스 플롯 - 데이터 분포와 이상치를 시각화:
+sns.boxplot(data=housing_df, x="MEDV", y="RM")
+plt.title("Box Plot of RM vs MEDV")
+plt.show()
+
+3)분포 플롯 - 데이터의 분포를 확인
+sns.histplot(data=housing_df, x="MEDV", kde=True)
+plt.title("Distribution of MEDV")
+plt.show()
+
+4)산점도 플롯 - 변수 간 관계를 시각화
+sns.scatterplot(data=housing_df, x="RM", y="MEDV")
+plt.title("Scatter Plot of RM vs MEDV")
+plt.show()
+</code></pre>
+{% endhint %}
+
 ```python
+# 상관관계 행렬 계산
+corr_matrix = housing_df_cleaned.corr()
+
+# 상관관계 히트맵 시각화
+plt.figure(figsize=(12, 8))
+sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Correlation Matrix with MEDV")
+plt.show()
+
+# MEDV와의 상관관계 출력
+medv_corr = corr_matrix['MEDV'].sort_values(ascending=False)
+print("MEDV와의 상관관계:\n", medv_corr)
+```
+
+```
+특징 선택
+선택 기준
+상관계수의 절대값 기준:
+|상관계수| ≥ 0.7: 매우 강한 상관관계 (Strong correlation)
+0.5 ≤ |상관계수| < 0.7: 강한 상관관계 (Moderate to strong correlation)
+0.3 ≤ |상관계수| < 0.5: 중간 정도의 상관관계 (Moderate correlation)
+|상관계수| < 0.3: 약한 상관관계 (Weak or no correlation)
+```
+
+```
+1. MEDV와 주요 변수 상관관계
+히트맵에서 MEDV와 다른 변수 간의 상관관계를 보면:
+
+RM (주거당 평균 객실 수):
+
+상관계수: +0.70
+양의 상관관계: 객실 수가 많을수록 주택 가격이 상승.
+LSTAT (하위 계층 비율):
+
+상관계수: -0.74
+음의 상관관계: 하위 계층 비율이 높을수록 주택 가격이 감소.
+PTRATIO (학생-교사 비율):
+
+상관계수: -0.51
+음의 상관관계: 학생-교사 비율이 높을수록 주택 가격이 감소.
+TAX (재산세율):
+
+상관계수: -0.47
+음의 상관관계: 재산세율이 높을수록 주택 가격이 감소.
+NOX (질소산화물 농도):
+
+상관계수: -0.43
+음의 상관관계: 공기 오염도가 높을수록 주택 가격이 감소.
+```
+
+```python
+# 상관관계 
+# RM (주거당 평균 객실 수): 양의 상관관계(객실 수가 많을수록 주택 가격이 상승)
+# LSTAT (하위 계층 비율): 음의 상관관계(하위 계층 비율이 높을수록 주택 가격이 감소)
+# PTRATIO (학생-교사 비율) : 음의 상관관계(학생-교사 비율이 높을수록 주택 가격이 감소)
+# TAX (재산세율) : 음의 상관관계(재산세율이 높을수록 주택 가격이 감소)
+# NOX (질소산화물 농도) : 음의 상관관계(공기 오염도가 높을수록 주택 가격이 감소)
 ```
 
 
 
+5\) Data준비 마무리
 
+```python
+selected_features = ['RM', 'LSTAT', 'PTRATIO', 'TAX', 'NOX']
 
+X_train_selected = X_train_cleaned[selected_features] 
+# train data의 독립 변수(스케일링, 전차리를 한뒤의)중에 선택된 변수만 가져옴
 
+X_test_selected = X_test_cleaned[selected_features] 
+# test data의 의 독립 변수(스케일링, 전차리를 한뒤의) 중에 선택된 열만 선택
+```
+
+{% hint style="info" %}
+특징 선택 필요한 이유:
+
+* 불필요한 변수 제거로 모델의 계산 효율성을 높이고 과적합(overfitting)을 방지
+* 선택된 변수들이 MEDV와 가장 관련성이 높으므로, 모델의 성능을 최적화할 가능성이 크다
+* 훈련 데이터(X\_train\_cleaned)와 테스트 데이터(X\_test\_cleaned)에서 동일한 변수만 사용하여 일관된 학습 및 평가 환경을 제공
+{% endhint %}
+
+```python
+print(X_train_selected.shape) # 훈련 데이터에서 5개의 변수만 사용
+print(X_test_selected.shape)   # 테스트 데이터에서 5개의 변수만 사용
+# (162, 5)
+# (92, 5)
+# 훈련 데이터의 샘플 수(행), 선택된 특성(변수)수 (열)
+```
+
+***
 
 ## 4. Model training & Model Evaluation (모델학습 & 모델평가)
 
+* 선택된 독립변수(x\_train\_selected)와 종속변수(Y-train)로 모델학습
 
 
 
+1. 선형 회귀 모델(Linear Regression)
 
+```python
+from sklearn.linear_model import LinearRegression #선형 회귀 모델
 
+# 모델 생성 및 학습
+model = LinearRegression()
+model.fit(X_train_selected, y_train)
 
+# 테스트 데이터 예측
+y_pred = model.predict(X_test_selected)
+```
 
+```python
+# 테스트 데이터 예측
+y_pred = model.predict(X_test_selected)
+```
 
+```python
+# 평가
+mse = mean_squared_error(y_test, y_pred)
+mae = mean_absolute_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
 
+print(f"평가 결과:\nMSE: {mse:.2f}, MAE: {mae:.2f}, R²: {r2:.2f}")
+# 평가 결과:
+# MSE: 9.56, MAE: 2.22, R²: 0.77
+```
 
+{% hint style="info" %}
+<pre><code>MSE (Mean Squared Error):
+예측값과 실제값의 차이를 제곱한 후 평균을 구한 값
+값이 작을수록 모델이 실제값에 더 가까운 예측을 하고 있다는 의미
 
+MAE (Mean Absolute Error): 
+예측값과 실제값의 절대적인 차이의 평균
+모델이 평균적으로 단위만큼의 오차를 내고 있다는 것을 의미
 
+<strong>R² (R-Squared): 
+</strong>모델이 데이터를 얼마나 잘 설명하는지를 나타내는 지표
+1.0에 가까울수록 더 나은 모델
+0.77은 모델이 전체 데이터 분산의 77%를 설명하고 있다는 의미
+</code></pre>
+{% endhint %}
 
+```
+평가 결과 해석
 
+(1) MSE(Mean Squared Error) 
+MSE는 9.56으로, 모델이 예측한 주택 가격이 실제 주택 가격과 
+평균적으로 9.56 단위의 제곱 오차를 가지고 있음을 의미
 
+(2)MAE(Mean Absolute Error)
+MAE는 2.22로, MSE보다 더 직관적으로 모델의 예측 오차가 평균적으로 약 2.22 단위임을 나타냄
+주택 가격(MEDV)의 값이 $1000 단위로 측정되므로, 평균적으로 약 $2200 정도의 
+오차가 발생한다고 볼 수 있음
 
+(3) R²(R-Squared):결정계수
+R² = 0.77:
+모델이 입력 변수(RM, LSTAT, PTRATIO, TAX, NOX)를 기반으로, 
+주택 가격(MEDV)의 변동성 중 77%를 설명
+1.0에 가까울수록 좋은 성능이며, 0.77은 비교적 괜찮은 성능을 나타냄
+다만, 남은 23%의 변동성은 모델이 설명하지 못하며, 
+이는 추가적인 변수나 비선형 모델 도입으로 보완할 수 있다
+```
 
+***
+
+2. 의사 결정 나무(Decision Tree)
+
+```python
+from sklearn.tree import DecisionTreeRegressor #의사결정나무
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
+# 의사결정 나무 모델 생성 및 학습
+tree_model = DecisionTreeRegressor(random_state=42)
+tree_model.fit(X_train_selected, y_train)
+
+# 테스트 데이터 예측
+y_pred_tree = tree_model.predict(X_test_selected)
+```
+
+```python
+# 평가 지표 계산
+mse_tree = mean_squared_error(y_test, y_pred_tree)
+mae_tree = mean_absolute_error(y_test, y_pred_tree)
+r2_tree = r2_score(y_test, y_pred_tree)
+
+print(f"의사결정 나무 평가 결과:\nMSE: {mse_tree:.2f}, MAE: {mae_tree:.2f}, R²: {r2_tree:.2f}")
+# 의사결정 나무 평가 결과:
+# MSE: 10.19, MAE: 2.51, R²: 0.76
+```
+
+```python
+# 트리 구조 시각화
+from sklearn.tree import plot_tree
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(20, 10))
+plot_tree(tree_model, feature_names=X_train_selected.columns, filled=True, rounded=True)
+plt.title("Decision Tree Visualization")
+plt.show()
+```
+
+```python
+# 교차 검증으로 모델의 일반화 성능을 평가
+from sklearn.model_selection import cross_val_score
+
+cv_scores_tree = cross_val_score(tree_model, X_train_selected, y_train, cv=5, scoring='r2')
+print("교차 검증 R² 점수:", cv_scores_tree)
+print("평균 R² 점수:", cv_scores_tree.mean())
+# # 평가 지표 계산
+mse_tree = mean_squared_error(y_test, y_pred_tree)
+mae_tree = mean_absolute_error(y_test, y_pred_tree)
+r2_tree = r2_score(y_test, y_pred_tree)
+
+print(f"의사결정 나무 평가 결과:\nMSE: {mse_tree:.2f}, MAE: {mae_tree:.2f}, R²: {r2_tree:.2f}")
+
+# 의사결정 나무 평가 결과:
+# MSE: 10.19, MAE: 2.51, R²: 0.76
+```
+
+```
+평가 결과 해석
+
+(1) 10.19는 모델이 주택 가격 예측에서 평균적으로 10.19 단위의 제곱 오차를 내고 있음을 의미
+(2) 주택 가격이 $1000 단위로 측정되므로, 평균 약 $2510 정도의 오차가 발생
+(3) 0.76은 모델이 전체 데이터의 변동성 중 76%를 설명한다는 것을 의미
+    나머지 24%는 모델이 설명하지 못하는 변동성
+```
 
 
 
