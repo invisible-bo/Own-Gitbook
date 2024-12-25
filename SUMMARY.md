@@ -22,5 +22,7 @@
     * [Machine learning types](learning/machine-learning/machine-learning-types/README.md)
       * [Supervised learning](learning/machine-learning/machine-learning-types/supervised-learning/README.md)
         * [\*Predict Housing Price](learning/machine-learning/machine-learning-types/supervised-learning/predict-housing-price.md)
+      * [Unsupervised learning](learning/machine-learning/machine-learning-types/unsupervised-learning/README.md)
+        * [Customers analytics](learning/machine-learning/machine-learning-types/unsupervised-learning/customers-analytics.md)
     * [Dataset](learning/machine-learning/dataset/README.md)
       * [Data Preprocessing](learning/machine-learning/dataset/data-preprocessing.md)
