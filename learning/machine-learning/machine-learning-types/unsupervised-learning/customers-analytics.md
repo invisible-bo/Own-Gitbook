@@ -85,17 +85,7 @@ print(outliers)
 customer_df_cleaned = customer_df[(abs(z_scores) < 2.5).all(axis=1)]
 ```
 
-
-
-
-
-
-
-
-
-
-
-
+***
 
 {% hint style="info" %}
 고객 세분화 프로젝트에서는 정규화(Normalization)와 **표준화(Standardization)** 중 표준화(Standardization)가 더 적합한 선택
@@ -129,19 +119,17 @@ customer_df_cleaned = customer_df[(abs(z_scores) < 2.5).all(axis=1)]
    * 정규화는 변수 간 분포 차이를 해결하지 못하므로, 클러스터링 결과에서 범위가 좁은 변수가 덜 중요하게 다뤄질 수 있다
 {% endhint %}
 
-```python
-# 표준화 선택
-from sklearn.preprocessing import StandardScaler
+<pre class="language-python"><code class="lang-python"><strong># 표준화 선택
+</strong>from sklearn.preprocessing import StandardScaler
 # StandardScaler 객체 생성
 scaler = StandardScaler()
 # 데이터 표준화 
 scaled_data = scaler.fit_transform(customer_df[['Annual Income (k$)', 'Spending Score (1-100)']])
-```
+</code></pre>
 
-```python
-# 표준화된 데이터 데이터프레임으로 변환
-standardized_df = pd.DataFrame(scaled_data, columns=['Annual Income (k$)_standardized', 'Spending Score (1-100)_standardized'])
-```
+<pre class="language-python"><code class="lang-python"><strong># 표준화된 데이터 데이터프레임으로 변환
+</strong>standardized_df = pd.DataFrame(scaled_data, columns=['Annual Income (k$)_standardized', 'Spending Score (1-100)_standardized'])
+</code></pre>
 
 {% hint style="info" %}
 DataFrame화가 필요한 이유
