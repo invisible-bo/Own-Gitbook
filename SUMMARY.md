@@ -12,7 +12,7 @@
     * [Python scope](learning/python/python-scope.md)
     * [Virtual Environment](learning/python/virtual-environment.md)
     * [Usefull Pips & Modules](learning/python/usefull-pips-and-modules.md)
-    * [Code kate](learning/python/code-kate.md)
+    * [\*Code kate](learning/python/code-kate.md)
   * [Git & Github](learning/git-and-github/README.md)
     * [Marksdown](learning/git-and-github/marksdown.md)
     * [Linux basic commands](learning/git-and-github/linux-basic-commands.md)

@@ -45,31 +45,96 @@ df.fillna(df.mean(), inplace=True)  # 평균으로 결측값 대체
 * 제거, 대체(중앙값이나 평균값으로), 변환(로그변환, 스케일링등)
 * 의미있는 데이터일 경우 분석 모델에 포함
 
-
+***
 
 ### 3. Normalization or Standardization(데이터 정규화 또는 표준화)
 
-* 정규화 :&#x20;
+###
 
-1\) 데이터 값을 0과 1 사이로 스케일링.
+### 정규화(Normalization)
 
-2\) 주로 최소/최대 범위로 정규화 (Min-Max Scaling)
+* **목적:** 각 변수의 값을 0과 1 사이로 변환
+* 적용 방법: Min-Max Scaling (최솟값과 최댓값을 기준으로 변환)
+* 대표적인 도구: sklearn.preprocessing.MinMaxScaler&#x20;
+* 사용 사례: 데이터의 상대적 크기를 유지하며, 범위를 0\~1로 제한하고 싶을 때
 
+{% code fullWidth="true" %}
 ```python
 from sklearn.preprocessing import MinMaxScaler
+
+# MinMaxScaler 객체 생성
 scaler = MinMaxScaler()
-X_scaled = scaler.fit_transform(X)
+
+# 데이터 정규화 (예: 특정 열만 정규화)
+normalized_data = scaler.fit_transform(df[['Feature1', 'Feature2']])
+
+# 정규화된 데이터를 DataFrame으로 변환 (선택 사항)
+normalized_df = pd.DataFrame(normalized_data, columns=['Feature1_normalized', 'Feature2_normalized'])
+
+# 확인
+print(normalized_df.head())
+
 ```
+{% endcode %}
 
-* 표준화 :&#x20;
+### 표준화(Standardization)
 
-1\) 데이터 분포를 평균 0, 표준편차 1로 변환
-
-2\) 주로 정규분포 가정을 필요로 하는 알고리즘에 적합 (예: SVM, 회귀)
+* **목적:** 각 변수의 값이 평균 0, 표준편차 1이 되도록 변환
+* 적용 방법: Z-Score Scaling (데이터에서 평균을 빼고, 표준편차로 나눔)
+* 대표적인 도구: sklearn.preprocessing.StandardScaler
+* **사용 사례**: 데이터의 분포 차이를 제거하고, 각 변수를 동일한 중요도로 처리하고 싶을 때
 
 ```python
 from sklearn.preprocessing import StandardScaler
+
+# StandardScaler 객체 생성
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+
+# 데이터 표준화 (예: 특정 열만 표준화)
+scaled_data = scaler.fit_transform(df[['Feature1', 'Feature2']])
+
+# 표준화된 데이터를 DataFrame으로 변환 (선택 사항)
+scaled_df = pd.DataFrame(scaled_data, columns=['Feature1_scaled', 'Feature2_scaled'])
+
+# 확인
+print(scaled_df.head())
+
 ```
+
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+### 전체 DataFrame에 적용
+
+표준화 또는 정규화를 데이터프레임 전체에 적용
+
+```python
+# 데이터프레임 전체를 표준화
+scaled_data = scaler.fit_transform(df)
+
+# 데이터프레임 전체를 정규화
+normalized_data = scaler.fit_transform(df)
+
+# 결과를 다시 DataFrame으로 변환
+scaled_df = pd.DataFrame(scaled_data, columns=df.columns)
+normalized_df = pd.DataFrame(normalized_data, columns=df.columns)
+```
+
+
+
+### 주의사항
+
+1\) Fit/Transform 분리: Train/Test 데이터로 나눈 경우, 항상 train 데이터에 fit한 스케일러를 test 데이터에 동일하게 적용해야 한다
+
+```python
+# Train/Test 데이터 분리 후
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)  # transform만 수행
+```
+
+2\) 알고리즘 선택에 따라 다름: 스케일링이 필요한 알고리즘(K-Means, PCA, SVM 등)과 필요하지 않은 알고리즘(트리 기반 모델)은 구분해야 한다
+
+
+
+
 
