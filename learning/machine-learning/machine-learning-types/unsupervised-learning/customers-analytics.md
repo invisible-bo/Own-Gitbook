@@ -27,8 +27,10 @@ Spending Score (1-100)
 - 소비 성향이 높은 고객(고득점)과 낮은 고객(저득점)을 구분하여 마케팅 캠페인을 타겟팅할 수 있다
 ```
 
+### 결측치 탐지
+
 ```python
-print(customer_df.isnull().sum()) # 결측값 개수 확인
+print(customer_df.isnull().sum()) # 결측치 개수 확인
 # 결과 CustomerID                0
 # Gender                    0
 # Age                       0
@@ -36,6 +38,64 @@ print(customer_df.isnull().sum()) # 결측값 개수 확인
 # Spending Score (1-100)    0
 # dtype: int64 
 ```
+
+### 이상치 처리(outliers)
+
+Z-Score(표준화 점수)
+
+z-Score를 계산하여 절대값이 특정 임계값(일반적으로 3)을 초과하는 값을 이상치로 간주
+
+```python
+from scipy.stats import zscore
+
+# Z-Score 계산
+z_scores = zscore(customer_df[['Annual Income (k$)', 'Spending Score (1-100)']])
+
+# 이상치 탐지
+customer_df_cleaned = customer_df[(abs(z_scores) < 3).all(axis=1)]
+
+# 이상치 필터링 (Z-Score 절대값이 3 이상인 데이터를 이상치로 간주)
+outliers = customer_df[(abs(z_scores) >= 3).any(axis=1)]
+
+# 이상치 데이터 출력
+print(outliers)
+
+# 결과
+Empty DataFrame
+Columns: [CustomerID, Gender, Age, Annual Income (k$), Spending Score (1-100)]
+Index: []
+```
+
+```python
+# 이상치 탐지
+customer_df_cleaned = customer_df[(abs(z_scores) < 2.5).all(axis=1)]
+# 이상치 필터링 (Z-Score 절대값이 2.5 이상인 데이터를 이상치로 간주)
+outliers = customer_df[(abs(z_scores) >= 2.5).any(axis=1)]
+# 이상치 데이터 출력
+print(outliers)
+
+# 결과
+     CustomerID Gender  Age  Annual Income (k$)  Spending Score (1-100)
+198         199   Male   32                 137                      18
+199         200   Male   30                 137                      83
+```
+
+```python
+# 해당되는 두개의 data 이상치 제거
+customer_df_cleaned = customer_df[(abs(z_scores) < 2.5).all(axis=1)]
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% hint style="info" %}
 고객 세분화 프로젝트에서는 정규화(Normalization)와 **표준화(Standardization)** 중 표준화(Standardization)가 더 적합한 선택
@@ -69,9 +129,32 @@ print(customer_df.isnull().sum()) # 결측값 개수 확인
    * 정규화는 변수 간 분포 차이를 해결하지 못하므로, 클러스터링 결과에서 범위가 좁은 변수가 덜 중요하게 다뤄질 수 있다
 {% endhint %}
 
+```python
+# 표준화 선택
+from sklearn.preprocessing import StandardScaler
+# StandardScaler 객체 생성
+scaler = StandardScaler()
+# 데이터 표준화 
+scaled_data = scaler.fit_transform(customer_df[['Annual Income (k$)', 'Spending Score (1-100)']])
+```
 
+```python
+# 표준화된 데이터 데이터프레임으로 변환
+standardized_df = pd.DataFrame(scaled_data, columns=['Annual Income (k$)_standardized', 'Spending Score (1-100)_standardized'])
+```
 
+{% hint style="info" %}
+DataFrame화가 필요한 이유
 
+* **가독성**:
+  * 표준화된 데이터를 NumPy 배열로 유지하면 변수 이름이 없어서 어떤 값이 어떤 변수인지 알기 어렵다
+* **데이터 병합**:
+  * 기존의 데이터프레임과 표준화된 데이터를 병합하거나, 기존 데이터프레임을 대체하려면 데이터프레임화가 유용하다
+* **분석 편의성**:
+  * 데이터프레임은 Pandas의 다양한 기능(ex: 필터링, 집계, 시각화)을 활용할 수 있어 작업이 편리하다
+{% endhint %}
+
+***
 
 
 

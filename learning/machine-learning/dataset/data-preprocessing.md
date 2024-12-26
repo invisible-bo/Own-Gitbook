@@ -58,7 +58,7 @@ df.fillna(df.mean(), inplace=True)  # 평균으로 결측값 대체
 * 대표적인 도구: sklearn.preprocessing.MinMaxScaler&#x20;
 * 사용 사례: 데이터의 상대적 크기를 유지하며, 범위를 0\~1로 제한하고 싶을 때
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```python
 from sklearn.preprocessing import MinMaxScaler
 
