@@ -11,7 +11,7 @@ description: '메서드 : 특정 객체와 연관된 함수'
 
 ex)&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```python
 def solution(array, n):

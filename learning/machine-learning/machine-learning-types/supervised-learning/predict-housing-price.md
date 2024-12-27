@@ -710,7 +710,7 @@ plt.grid(True)
 plt.show()
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 2. 의사결정나무&#x20;
 
@@ -731,7 +731,7 @@ plt.show()
 
 </code></pre>
 
-<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```python
 from sklearn.tree import export_text # 의사결정나무텍스트기반 시각화
@@ -742,8 +742,6 @@ print(tree_rules)
 ```
 
 3. 랜덤포레스트 시각화
-
-
 
 ```python
 import matplotlib.pyplot as plt #랜덤포레스트 시각화
@@ -764,5 +762,5 @@ plt.title('Feature Importances from Random Forest')
 plt.show()
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
