@@ -8,6 +8,15 @@ description: Object-oriented programming(객체지향프로그래밍)
   Data를 객체로 모델링하고, 이 객체들 간의 상호작용을 중심으로 프로그램을 설계하는 \
   Programming 패러다임. Python은 객체 지향 언어로, 모든 것이 객체로 구성되어 있다
 
+## Python의 OOP특징
+
+* Dynamic Typing(동적 타이핑):
+  * Python에서는 객체의 타입을 runtime에 결정
+* 모든 것이 객체(Object):
+  * 숫자, 문자열, 함수 등 모든 것이 object로 취급됨
+
+##
+
 ## 객체지향프로그래밍의 주요 개념
 
 ### 1. Class
