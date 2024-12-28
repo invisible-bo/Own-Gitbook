@@ -24,7 +24,36 @@ description: Object-oriented programming(객체지향프로그래밍)
 | 생성자        | object를 만들 때 실행되는 함수 |
 | 인스턴스       | 메모리에 살아있는 object     |
 
+* Class 클래스이름:\
+  &#x20;   def 매서드이름(self):\
+  &#x20;       명령블록
+* 객체 = 클래스이름()\
+  객체.메서드()
 
+```python
+class Monster:
+    def say(self):
+        print("I am monster")
+
+shark = Monster()
+shark.say()
+# I am monster
+```
+
+
+
+* 속성추가
+
+```python
+class Monster:
+    def __init__(self, name):
+        self.name = name
+    def say(self):
+        print(f"나는 {self.name}")
+        
+shark = Monster("상어")
+shark.say()
+```
 
 
 
