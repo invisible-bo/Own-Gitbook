@@ -98,15 +98,14 @@ customer_df_cleaned = customer_df[(abs(z_scores) < 2.5).all(axis=1)]
    * K-Means와 같은 클러스터링 알고리즘은 **거리 기반**으로 작동하므로, 데이터의 분포가 평균 0, 표준편차 1로 스케일링되면 모든 변수에 걸쳐 균일한 중요도를 가지게 된다
    * 표준화는 변수 간 크기 차이로 인해 특정 변수가 클러스터링에 지나치게 영향을 미치는 문제를 방지
 2. **데이터의 분포**
-   * `Annual Income (k$)`와 `Spending Score (1-100)`는 값의 범위와 분포가 다
+   * `Annual Income (k$)`와 `Spending Score (1-100)`는 \
+     값의 범위와 분포가 다르다
      * `Annual Income (k$)`는 10\~130 (범위가 더 넓음)
      * `Spending Score (1-100)`는 1\~100 (범위가 좁음)
-   * 이처럼 값의 분포와 범위가 다를 경우, 표준화를 통해 데이터의 분포를 동일하게 맞추는 것이 효과적
+   * 값의 분포와 범위가 다를 경우, 표준화를 통해 데이터의 분포를 동일하게 맞추는 것이 효과적
 3. **정규분포를 가정하지 않아도 됨**
    * 표준화는 데이터가 정규분포를 따르지 않아도 유용\
      이는 클러스터링처럼 데이터의 분포보다는 거리에 의존하는 알고리즘에서 중요
-
-
 
 
 
@@ -456,7 +455,7 @@ hc_silhouette_score = silhouette_score(
 # 계층적 군집화 결과 클러스터 레이블
 
 print(f"Silhouette Score (Hierarchical Clustering): {hc_silhouette_score:.4f}")
-# Silhouette Score (Hierarchical Clustering): 0.6230
+Silhouette Score (Hierarchical Clustering): 0.6230
 ```
 
 
