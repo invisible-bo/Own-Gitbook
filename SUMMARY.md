@@ -11,6 +11,7 @@
       * [Etc functions and method](learning/python/python-function/etc-functions-and-method.md)
     * [Python scope](learning/python/python-scope.md)
     * [Python OOP](learning/python/python-oop.md)
+    * [PEP 8 Style](learning/python/pep-8-style.md)
     * [Usefull Pips & Modules](learning/python/usefull-pips-and-modules.md)
     * [\*Code kate](learning/python/code-kate.md)
   * [Git & Github](learning/git-and-github/README.md)
