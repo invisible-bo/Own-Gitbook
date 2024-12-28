@@ -110,6 +110,8 @@ my_dog.bakr()
 
 * data를 보호하고 객체 외부에서 직접 접근하지 못하도록 속성을 숨기는 것
 * python에서는 변수명 앞에 밑줄(`_` or `__`)를 붙여 이를 나타냄
+* 데이터와  함수를 캡슐 안에 넣는것.  캡슐은 class를 의미한다&#x20;
+* 코드가 좀 더 구조화되고, 함수나 메서드가 인수를 취할 필요가 없어짐
 
 
 
@@ -117,20 +119,66 @@ my_dog.bakr()
 
 * 기존 class를 확장하여 새로운 class를 만드는 기능
 * '부모 class'의 속성과 메서드를 '자식 class'가 상속받음
+* 자식 class가 부모 class의 속성을 모두 가지고 추가적으로 다른 속성을 가진다는 뜻
 
 ```python
+# 부모 class 정의
 class Animal:
+    def __init__(self, name):
+        self.name = name
     def speak(self):
-        print("Animal speaks")
+        return "this animal makes a sound"
         
+# 자식 class 1
 class Dog(Animal):
     def speak(self):
-        print("Dog barks")
-        
-dog = Dog()
-dog.speak()
-# 출력 : Dog barks
+        return f"{self.name} says Woof!"
+# 자식 class 2
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} says Meow!"
+    
+# 객체 생성 및 사용
+dog = Dog("Buddy")
+cat = Cat("Kitty")
+
+print(dog.speak())  # Buddy says Woof!
+print(cat.speak())  # Kitty says Meow!
 ```
+
+`Animal` class는 `name` 속성과 `speak` 메서드를 가지고 있음
+
+`Dog` 와 `Cat` class는 `Animal` 을 상속 받으며 `speak` 메서드를 각각 자신만의 방식으로\
+재정의(override)함
+
+각 자식 class의 instance를 생성하여 고유한 `speak` 메서드 동작을 확인
+
+
+
+### 7. Abstraction(추상화):
+
+* 복잡한 시스템에서 필요한 정보만을 드러내고 불필요한 세부 사항은 감추는 것
+* 코드의 복잡성을 줄이고, 사용자가 필요한 기능에만 집중할 수 있도록 도움
+
+
+
+### 8. Polymorphism(다형성,  여러개의 형태):
+
+* 같은 인터페이스(또는 메서드)를 사용하지만, 객체에 따라 다른 동작을 수행할 수 있는 능력
+
+주요특징
+
+1. 동일한 인터페이스, 다른 동작:\
+   동일한 메서드 이름이지만, 객체의 종류에 따라 메서드가 다른 방식으로 동작 \
+   &#x20; ex) speak() 메서드는 개(Dog)에서는 "Woof!"를, 고양이(Cat)에서는 "Meow!"를 출력
+2. 유연성과 확장성:\
+   새로운 class가 추가되더라도 기존 코드를 수정하지 않고 쉽게 확장\
+   부모 클래스나 인터페이스로 작업하면, 객체가 어떤 하위 클래스인지 몰라도 동일한 방식으로 \
+   사용할 수 있다
+
+
+
+
 
 
 
