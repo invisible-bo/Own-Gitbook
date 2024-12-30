@@ -464,17 +464,69 @@ Silhouette Score (Hierarchical Clustering): 0.6230
 
 3. DBSCAN
 
+```python
+from sklearn.cluster import DBSCAN # DBSCAN 알고리즘
+```
 
+```python
+# DBSCAN 모델 생성 및 실행
+dbscan = DBSCAN(eps=0.5, min_samples=5)  
+# eps와 min_samples는 데이터에 맞게 조정, 
+# 이 설정은 일반적으로 밀도가 고르게 분포된 데이터셋에서 잘 작동
+labels = dbscan.fit_predict(standardized_df)  
+# 이미 전처리된 데이터 사용
 
+# 결과 확인
+print("클러스터 레이블:", set(labels))  # 레이블 종류
+클러스터 레이블: {np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4), 
+np.int64(5), np.int64(-1)}
+# 결과 6개의 클러스터와 1개의 -1 노이즈 포인트
+```
 
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+plt.figure(figsize=(10, 7))
+sns.scatterplot(
+    x=standardized_df['Annual Income (k$)_standardized'],
+    y=standardized_df['Spending Score (1-100)_standardized'],
+    hue=standardized_df['Cluster_DBSCAN'],
+    palette='viridis',
+    s=100
+)
+plt.title('DBSCAN Clustering')
+plt.xlabel('Annual Income (Standardized)')
+plt.ylabel('Spending Score (Standardized)')
+plt.legend(title='Cluster')
+plt.show()
+# DBSCAN결과 시각화
+```
 
+<figure><img src="../../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
+```python
+from sklearn.metrics import silhouette_score
 
+# 노이즈 포인트(-1) 제거 후 실루엣 점수 계산
+non_noise_data = standardized_df[standardized_df['Cluster_DBSCAN'] != -1]
+silhouette = silhouette_score(
+    non_noise_data[['Annual Income (k$)_standardized', 'Spending Score (1-100)_standardized']],
+    non_noise_data['Cluster_DBSCAN']
+)
+print(f"Silhouette Score (DBSCAN): {silhouette:.4f}")
+```
 
+***
 
+## Silouette Score 비교
 
-
+```
+K-means(cluster 5개) : 0.5586172665262851
+계층적 군집화 : 0.6230
+DBSCAN : 0.4744
+계층적 군집화가 다른 두 알고리즘(K-Means, DBSCAN)에 비해 클러스터링 품질이 더 좋다는 것을 의미
+```
 
 
 

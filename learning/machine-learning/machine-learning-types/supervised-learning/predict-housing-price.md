@@ -103,6 +103,34 @@ columns_to_drop = ['CHAS', 'RAD', 'B']
 <strong>housing_df_cleaned = housing_df.drop(columns=columns_to_drop)
 </strong># 3개의 컬럼을 제거한 데이터셋을 housing_df_cleaned에 변수로 지정
 
+print(housing_df_cleaned)
+   CRIM    ZN  INDUS    NOX     RM   AGE     DIS  TAX  PTRATIO  LSTAT  \
+0    0.00632  18.0   2.31  0.538  6.575  65.2  4.0900  296     15.3   4.98   
+1    0.02731   0.0   7.07  0.469  6.421  78.9  4.9671  242     17.8   9.14   
+2    0.02729   0.0   7.07  0.469  7.185  61.1  4.9671  242     17.8   4.03   
+3    0.03237   0.0   2.18  0.458  6.998  45.8  6.0622  222     18.7   2.94   
+4    0.06905   0.0   2.18  0.458  7.147  54.2  6.0622  222     18.7    NaN   
+..       ...   ...    ...    ...    ...   ...     ...  ...      ...    ...   
+501  0.06263   0.0  11.93  0.573  6.593  69.1  2.4786  273     21.0    NaN   
+502  0.04527   0.0  11.93  0.573  6.120  76.7  2.2875  273     21.0   9.08   
+503  0.06076   0.0  11.93  0.573  6.976  91.0  2.1675  273     21.0   5.64   
+504  0.10959   0.0  11.93  0.573  6.794  89.3  2.3889  273     21.0   6.48   
+505  0.04741   0.0  11.93  0.573  6.030   NaN  2.5050  273     21.0   7.88   
+
+     MEDV  
+0    24.0  
+1    21.6  
+2    34.7  
+3    33.4  
+4    36.2  
+..    ...  
+501  22.4  
+502  20.6  
+503  23.9  
+504  22.0  
+505  11.9  
+
+[506 rows x 11 columns]
 </code></pre>
 
 ***
@@ -149,7 +177,7 @@ random\_state는 난수 생성기의 초기값(seed)을 지정
 3. 협업:\
    다른 사람이 코드를 실행할 때도 동일한 결과를 얻을 수 있도록 보장
 4. 고정값 설정:\
-   random\_state=42는 관습적으로 많이 사용되며, 반드시 42일 필요는 없다. 원하는 숫자를 사용해도 동일한 역할을 수행
+   random\_state=42는 관습적으로 많이 사용되며, 반드시 42일 필요는 없음. 원하는 숫자를 사용해도 동일한 역할을 수행
 {% endhint %}
 
 ***
@@ -201,7 +229,6 @@ print("훈련 데이터 결측치 개수:", X_train_imputed.isnull().sum().sum()
 print("테스트 데이터 결측치 개수:", X_test_imputed.isnull().sum().sum())
 # 결과 훈련 데이터 결측치 개수: 0
 # 결과테스트 데이터 결측치 개수: 0
-
 ```
 
 
@@ -239,9 +266,7 @@ print("이상치 제거 후 X_train 데이터 크기:", X_train_cleaned.shape)
 
 
 
-
-
-* &#x20;X\_train에서 IQR 기준 계산
+3\)  X\_train에서 IQR 기준 계산
 
 <pre class="language-python"><code class="lang-python"># IQR 기준 계산
 iqr_bounds = {
@@ -280,7 +305,7 @@ print("이상치 제거 후 X_test 데이터 크기:", X_test_cleaned.shape)
 
 
 
-3\) Scaling(Standardization or Normalization) : 표준화 혹은 정규화
+4\) Scaling(Standardization or Normalization) : 표준화 혹은 정규화
 
 ```python
 # Standardization 표준화
@@ -333,7 +358,7 @@ print(X_test_scaled_df.head())
 
 
 
-4\) Feature Selection(특징선택)
+5\) Feature Selection(특징선택)
 
 * 종속 변수(MEDV)와 가장 관련이 높은 변수를 식별
 * 종속 변수(MEDV)와 각 독립 변수 간 상관관계를 확인\
@@ -414,6 +439,8 @@ medv_corr = corr_matrix['MEDV'].sort_values(ascending=False)
 print("MEDV와의 상관관계:\n", medv_corr)
 ```
 
+<figure><img src="../../../../.gitbook/assets/image (10).png" alt=""><figcaption><p>MEDV와의 상관관계: MEDV 1.000000 RM 0.695360 ZN 0.373136 DIS 0.249929 CRIM -0.391363 AGE -0.394656 NOX -0.427321 TAX -0.468536 INDUS -0.481772 PTRATIO -0.507787 LSTAT -0.735822 Name: MEDV, dtype: float64</p></figcaption></figure>
+
 ```
 특징 선택
 선택 기준
@@ -461,7 +488,7 @@ NOX (질소산화물 농도):
 
 
 
-5\) Data준비 마무리
+6\) Data준비 마무리
 
 ```python
 selected_features = ['RM', 'LSTAT', 'PTRATIO', 'TAX', 'NOX']
@@ -482,11 +509,26 @@ X_test_selected = X_test_cleaned[selected_features]
 {% endhint %}
 
 ```python
-print(X_train_selected.shape) # 훈련 데이터에서 5개의 변수만 사용
-print(X_test_selected.shape)   # 테스트 데이터에서 5개의 변수만 사용
+print(X_train_selected.shape) 
+print(X_test_selected.shape)  
+# 훈련 데이터의 샘플 수(행), 선택된 특성(변수)수 (열)
+# 선택된 독립변수(x_train_selected)와 종속변수(Y-train)로 모델학습
 # (162, 5)
 # (92, 5)
-# 훈련 데이터의 샘플 수(행), 선택된 특성(변수)수 (열)
+
+# X_train_selected와 y_train을 데이터프레임으로 변환
+X_train_selected = pd.DataFrame(X_train_selected)
+y_train = pd.Series(y_train)
+
+
+
+# X_train_selected의 인덱스와 동일하게 y_train 필터링
+y_train = y_train.loc[X_train_selected.index]
+
+print(f"X_train_selected shape: {X_train_selected.shape}")
+print(f"y_train shape: {y_train.shape}")
+# X_train_selected shape: (162, 5)
+# y_train shape: (162,)
 ```
 
 ***
@@ -507,12 +549,7 @@ model = LinearRegression()
 model.fit(X_train_selected, y_train)
 
 # 테스트 데이터 예측
-y_pred = model.predict(X_test_selected)
-```
-
-```python
-# 테스트 데이터 예측
-y_pred = model.predict(X_test_selected)
+y_pred = model.predict(X_test_selected)    
 ```
 
 ```python
@@ -763,4 +800,3 @@ plt.show()
 ```
 
 <figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
-
