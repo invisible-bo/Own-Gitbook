@@ -30,4 +30,5 @@
         * [\*Customers analytics](learning/machine-learning/machine-learning-types/unsupervised-learning/customers-analytics.md)
     * [Dataset](learning/machine-learning/dataset/README.md)
       * [Data Preprocessing](learning/machine-learning/dataset/data-preprocessing.md)
+  * [Django](learning/django.md)
   * [Virtual Environment](learning/virtual-environment.md)
