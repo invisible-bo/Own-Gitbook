@@ -6,14 +6,14 @@ description: 가상 환경
 # Virtual Environment
 
 ```python
-python -m venv myenv
+python -m venv venv
 # Creating Virtual Environment
 
-source .venv/Scripts/activate
-# Activate Virtual Environment(Windows MINGW64에서)
+source venv/Scripts/activate
+# Activate Virtual Environment(Windows에서)
 
-source myenv/bin/activate
-# Activate Virtual Environment
+source venv/bin/activate
+# Activate Virtual Environment(MacOS)
 
 deactivate
 # deactivate Virtual Environment
