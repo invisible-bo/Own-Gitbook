@@ -385,7 +385,7 @@ plt.ylabel('Distance')
 plt.show()
 ```
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 #### **덴드로그램의 구성**

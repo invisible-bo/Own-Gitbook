@@ -1,6 +1,6 @@
 ---
-description: Django Framework
 icon: user-bounty-hunter
+description: Django Framework
 ---
 
 # Django
@@ -27,15 +27,41 @@ icon: user-bounty-hunter
 * 검증된 Framework
   * Spotify, Instagram, Dropbox, Toss 등등
 
+***
 
+### Install Django&#x20;
 
+```bash
+pip install django==4.2
+```
 
+{% hint style="info" %}
+pip freeze > requirements.txt    #pip list 저장
 
+pip install -r requirements.txt   #pip list install
+{% endhint %}
 
+***
 
+### Django Project
 
+* Django는 Project단위로 움직인다
+* project를 만든다 == 하나의 프로그램을 만들기 시작한다
 
+project 생성
 
+```bash
+django-admin startproject <project이름> <생성위치> # 생성위치 생략하면 현재 위치에 폴더 생성
+django-admin startproject <project이름> . # 현재 폴더를 프로젝트 폴더로 사용해서 생성
+```
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+* `settings.py` : project의 설정 관리
+* `urls.py` : 어떤 요청을 처리할지 결정하는 곳
+* `__init__.py` : 하나의 폴더를 하나의 python 패키지로 인식하도록 하는 파일
+* `wsgi.py` : 웹 서버 관련 설정 파일
+* `manage.py` : django project 유틸리티(프로젝트 조종기)
 
 
 
