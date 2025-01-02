@@ -33,4 +33,5 @@
   * [Django](learning/django/README.md)
     * [App](learning/django/app.md)
     * [Web](learning/django/web.md)
+    * [MTV pattern](learning/django/mtv-pattern.md)
   * [Virtual Environment](learning/virtual-environment.md)
