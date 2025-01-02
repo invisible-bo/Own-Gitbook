@@ -97,6 +97,10 @@ my_dog.bakr()
 * object(객체)의 데이터를 저장하는 변수
 * `__init__` method를 사용하여 object가 생성될 때 속성을 초기화 한다
 
+{% hint style="info" %}
+\_\_로 시작하는 method == magic method
+{% endhint %}
+
 
 
 ### 4. Method:
