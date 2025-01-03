@@ -92,11 +92,32 @@ def 특정문자변환(x):
 # 특정문자변환(sampleText_ko)
 ```
 
+***
 
+`swapcase()` : 이 메서드는 대문자를 소문자로, 소문자를 대문자로 변환
 
+`enumerate` : 반복 가능한 객체(iterable)를 순회할 때, 인덱스(index)와 해당 값(value)을 \
+&#x20;                          동시에 가져오는 메서드
 
+```python
+enumerate(iterable, start=0)
+iterable: 반복 가능한 객체(예: 리스트, 문자열, 튜플 등)
+start: 인덱스를 시작할 값(기본값은 0)
+각 반복에서 (index, value) 형태의 튜플이 반환
+```
 
+ex)
 
+```python
+text = "hello"
+for idx, char in enumerate(text):
+    print(f"Character at index {idx}: {char}")
+# Character at index 0: h
+# Character at index 1: e
+# Character at index 2: l
+# Character at index 3: l
+# Character at index 4: o
+```
 
 
 

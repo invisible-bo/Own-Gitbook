@@ -115,3 +115,56 @@ def solution(n, t):
     if 1 <= n <= 10 and 1 <= t <= 15:
         return n * (2**t)
 ```
+
+6\.
+
+```
+문제 설명
+문자열 my_string이 매개변수로 주어질 때, 대문자는 소문자로 
+소문자는 대문자로 변환한 문자열을 return하도록 solution 함수를 완성해주세요.
+
+제한사항
+1 ≤ my_string의 길이 ≤ 1,000
+my_string은 영어 대문자와 소문자로만 구성되어 있습니다.
+```
+
+```python
+def solution(my_string):
+    return my_string.swapcase()
+```
+
+{% hint style="info" %}
+swapcase() : 이 메서드는 대문자를 소문자로, 소문자를 대문자로 변환
+{% endhint %}
+
+7\.
+
+```
+문제 설명
+정수 리스트 num_list가 주어질 때, 첫 번째로 나오는 음수의 인덱스를 
+return하도록 solution 함수를 완성해주세요. 음수가 없다면 -1을 return합니다.
+
+제한사항
+5 ≤ num_list의 길이 ≤ 100
+-10 ≤ num_list의 원소 ≤ 100
+```
+
+```python
+def solution(num_list):
+    if 5 <= len(num_list) and all(-10 <= num <= 100 for num in num_list):
+        for inx, num in enumerate(num_list):
+            if num < 0:
+                return inx
+        return -1    
+```
+
+
+
+
+
+
+
+
+
+
+
