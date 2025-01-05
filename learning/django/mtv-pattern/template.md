@@ -42,6 +42,33 @@ render(request, template_name, context)
 
 ### Templates System
 
+* 데이터를 보여주는 로직 작성
+* Template 기본 경로
+  * `app_name / templates`&#x20;
+
+### Django Template Language(DTL)
+
+* Django template에서 사용하는 문법
+  * (주의) PYTHON이 동작하는 것이 아님!!
+* 데이터를 표현하기 위한 방법
+* DTL문법
+  * 변수 (Variable)
+  * 필터 (Filters)
+  * 태그 (Tags)
+  * 주석 (Comments)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
