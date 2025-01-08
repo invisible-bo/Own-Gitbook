@@ -119,9 +119,21 @@ for idx, char in enumerate(text):
 # Character at index 4: o
 ```
 
+***
 
+List comprehension
 
+```python
+[표현식 for 요소 in 반복가능한객체 if 조건식]
+ex)
+numbers = [x for x in range(5)]
+print(numbers)
+# 출력: [0, 1, 2, 3, 4]
 
+evens = [x for x in range(10) if x % 2 == 0]
+print(evens)
+# 출력: [0, 2, 4, 6, 8]
+```
 
 
 

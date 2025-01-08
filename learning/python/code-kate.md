@@ -158,13 +158,36 @@ def solution(num_list):
         return -1    
 ```
 
+8\.
 
+```
+문제 설명
+정수 배열 arr와 자연수 k가 주어집니다.
 
+만약 k가 홀수라면 arr의 모든 원소에 k를 곱하고, k가 짝수라면 arr의 모든 원소에 k를 더합니다.
 
+이러한 변환을 마친 후의 arr를 return 하는 solution 함수를 완성해 주세요.
+```
 
+```python
+def solution(arr, k):
+    if k % 2 == 0:
+        return [x + k for x in arr]
+    else:
+        return [x * k for x in arr]
+```
 
+9\.
 
+```
+문제 설명
+정수 배열 arr가 주어집니다. arr의 각 원소에 대해 값이 50보다 크거나 같은 짝수라면 2로 나누고,
+50보다 작은 홀수라면 2를 곱합니다. 
+그 결과인 정수 배열을 return 하는 solution 함수를 완성해 주세요.
+```
 
+```python
+```
 
 
 
