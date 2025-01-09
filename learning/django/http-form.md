@@ -71,7 +71,17 @@ HTTP Method
 
       \==URL에 데이터가 포함되어 전송
 
+쿼리스트링(Query String):
 
+* 데이터를  URL주소에 포함 시켜 전송 시키는 방식&#x20;
+
+#### 특징:
+
+* **형식**: `?key1=value1&key2=value2&...`
+  * `?`로 시작하고, 키-값 쌍(`key=value`)으로 이루어져 있다
+  * 여러 개의 키-값 쌍은 `&`로 구분됨
+* **위치**: URL 경로의 끝에 추가됨
+  * 예: `https://example.com/search?query=apple&lang=ko`
 
 
 
