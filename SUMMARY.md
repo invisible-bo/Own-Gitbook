@@ -36,4 +36,5 @@
     * [MTV pattern](learning/django/mtv-pattern/README.md)
       * [Template](learning/django/mtv-pattern/template.md)
     * [HTTP Form](learning/django/http-form.md)
+    * [Multiple Apps & URLs](learning/django/multiple-apps-and-urls.md)
   * [Virtual Environment](learning/virtual-environment.md)
