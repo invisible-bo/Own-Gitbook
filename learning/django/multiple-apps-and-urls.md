@@ -10,3 +10,27 @@ Django URLs
 
 
 
+### Multiple Apps
+
+* 하나의 프로젝트는 여러개의 앱으로 구성됨
+
+```bash
+python manage.py startapp users
+```
+
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption><p>URLs 기본</p></figcaption></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
