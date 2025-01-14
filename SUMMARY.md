@@ -38,4 +38,5 @@
     * [HTTP Form](learning/django/http-form.md)
     * [Multiple Apps & URLs](learning/django/multiple-apps-and-urls.md)
     * [Model](learning/django/model.md)
+    * [ORM](learning/django/orm.md)
   * [Virtual Environment](learning/virtual-environment.md)

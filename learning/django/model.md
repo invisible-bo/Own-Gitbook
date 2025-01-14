@@ -54,3 +54,41 @@
 
 
 
+### Migration
+
+* python으로 Model 코드는 작성했지만 데이터베이스에는 반영이 안된 상태
+* Django는 마이그레이션을 만들고 이 단위로 데이터베이스에 변경사항을 반
+
+```python
+python manage.py makemigrations 
+# 현재 model의 변경사항을 migration으로 생성영
+```
+
+```python
+python manage.py migrate
+# 데이터베이스에 반영되지 않은 마이그레이션을 반
+```
+
+***
+
+### SQlite설치
+
+***
+
+### 많이 쓰는 Field
+
+* 생성일 & 수정일
+
+```python
+auto_now_add=True 
+auto_now=True
+```
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
+
+
+
