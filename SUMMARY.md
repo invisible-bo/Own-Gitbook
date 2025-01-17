@@ -31,6 +31,7 @@
     * [Dataset](learning/machine-learning/dataset/README.md)
       * [Data Preprocessing](learning/machine-learning/dataset/data-preprocessing.md)
   * [Django](learning/django/README.md)
+    * [Django Project](learning/django/django-project.md)
     * [App](learning/django/app.md)
     * [Web](learning/django/web.md)
     * [MTV pattern](learning/django/mtv-pattern/README.md)
