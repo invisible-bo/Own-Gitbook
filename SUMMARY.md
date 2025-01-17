@@ -41,4 +41,5 @@
     * [ORM](learning/django/orm/README.md)
       * [CRUD](learning/django/orm/crud.md)
     * [Django Form](learning/django/django-form.md)
+    * [Django Auth](learning/django/django-auth.md)
   * [Virtual Environment](learning/virtual-environment.md)
