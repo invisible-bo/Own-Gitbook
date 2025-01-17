@@ -186,8 +186,37 @@ def solution(arr, k):
 그 결과인 정수 배열을 return 하는 solution 함수를 완성해 주세요.
 ```
 
+10\.
+
 ```python
+문제 설명
+정수 배열 numbers가 매개변수로 주어집니다. numbers의 원소 중 두 개를 곱해 만들 수 있는 
+최댓값을 return하도록 solution 함수를 완성해주세요.
 ```
+
+```python
+def solution(numbers):
+    num_list = sorted(numbers)
+    return num_list[-1] * num_list[-2]
+# 같은 결과값
+def solution(numbers):
+    numbers.sort()
+    return numbers[-1] * numbers[-2]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
