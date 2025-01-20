@@ -204,17 +204,65 @@ def solution(numbers):
     return numbers[-1] * numbers[-2]
 ```
 
+11\.
 
+```
+정수 n이 매개변수로 주어질 때 n의 각 자리 숫자의 합을 return하도록 solution 함수를 완성해주세요
+```
 
+```python
+def solution(n):
+    return sum(map(int,str(n)))    
+```
 
+```
+풀이
+코드에서 n을 str로 변환하면 다음과 같은 일이 발생합니다:
 
+정수 n이 문자열로 변환:
 
+str(n)은 정수 n을 문자열로 변환합니다.
+예: n = 123 → str(n) = "123".
+문자열의 각 문자가 반복 가능한 객체로 다뤄짐:
 
+문자열은 반복 가능한 객체(iterable)로 취급됩니다. 
+따라서 str(n)의 각 문자를 하나씩 순회할 수 있습니다.
+예: "123"은 문자 "1", "2", "3"로 나뉩니다.
+map(int, str(n)):
 
+map(int, str(n))는 문자열의 각 문자를 정수로 변환합니다.
+예: "123" → [int('1'), int('2'), int('3')] → [1, 2, 3].
+sum()로 합산:
 
+sum() 함수는 map의 결과를 더합니다.
+예: [1, 2, 3] → 1 + 2 + 3 = 6.
+```
 
+12\.
 
+```
+두 배열이 얼마나 유사한지 확인해보려고 합니다. 
+문자열 배열 s1과 s2가 주어질 때 같은 원소의 개수를 return하도록 solution 함수를 완성해주세요.
+```
 
+```python
+def solution(s1, s2):
+    common = set(s1) & set(s2)
+    return len(common)
+
+def solution(s1, s2):
+    return len(set(s1) & set(s2))
+```
+
+<pre><code><strong>- &#x26;는 집합 자료형에서 교집합 연산자로 동작한다
+</strong><strong>- Python에서 True와 False는 1과 0으로 간주되므로, 
+</strong><strong>  &#x26;를 논리 연산에 사용할 수도 있다. 
+</strong><strong>  하지만 일반적으로 **and**를 사용하는 것이 더 명확하다.
+</strong><strong>  
+</strong><strong>  
+</strong><strong>  len() 함수를 **집합(set)**에 사용하면, 집합에 포함된 원소의 개수를 반환한다
+</strong><strong>  len()을 집합에 사용하면 중복이 제거된 고유한 원소의 개수를 반환
+</strong></code></pre>
 
 
 
