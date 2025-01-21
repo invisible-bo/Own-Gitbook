@@ -46,4 +46,5 @@
     * [Django Form](learning/django/django-form.md)
     * [Django Auth](learning/django/django-auth.md)
     * [Django User](learning/django/django-user.md)
+  * [Docker](learning/docker.md)
   * [Virtual Environment](learning/virtual-environment.md)
