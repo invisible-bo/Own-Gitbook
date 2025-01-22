@@ -30,7 +30,7 @@ def index(request):
 ### Django Template Language(DTL)
 
 * Django template에서 사용하는 문법
-  * (주의) PYTHON이 동작하는 것이 아님!!
+  * (주의) **PYTHON이 동작하는 것이 아님!!**
 * 데이터를 표현하기 위한 방법
 * DTL문법
   * **변수 (Variable)**
@@ -76,7 +76,9 @@ def index(request):
 
 <figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
+* 상위템플릿에 base.html을 옮겼을때
 
+<figure><img src="../../../.gitbook/assets/image (22).png" alt="" width="563"><figcaption></figcaption></figure>
 
 
 
