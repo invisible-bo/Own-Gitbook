@@ -264,7 +264,19 @@ def solution(s1, s2):
 </strong><strong>  len()을 집합에 사용하면 중복이 제거된 고유한 원소의 개수를 반환
 </strong></code></pre>
 
+13\.
 
+중앙값은 어떤 주어진 값들을 크기의 순서대로 정렬했을 때 가장 중앙에 위치하는 값을 의미합니다. 예를 들어 1, 2, 7, 10, 11의 중앙값은 7입니다. 정수 배열 `array`가 매개변수로 주어질 때, 중앙값을 return 하도록 solution 함수를 완성해보세요.
+
+```python
+def solution(array):
+    array.sort()
+    middle_num = len(array)//2  
+    return array[middle_num]
+    
+# 중앙값을 찾기 위해 가장 간단하고 효율적인 방식.
+# 배열 인덱스는 0부터 시작하니까, 전체 길이를 반으로 나눈 값이 중앙값의 인덱스가 됨
+```
 
 
 
