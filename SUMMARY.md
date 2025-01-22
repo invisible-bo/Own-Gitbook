@@ -7,7 +7,6 @@
     * [Python Condition](learning/python/python-condition.md)
     * [Python Loop](learning/python/python-loop.md)
     * [Python Function](learning/python/python-function/README.md)
-      * [Python Syntactic Features](learning/python/python-function/python-syntactic-features.md)
       * [Etc functions and method](learning/python/python-function/etc-functions-and-method.md)
     * [Python scope](learning/python/python-scope.md)
     * [Python OOP](learning/python/python-oop.md)
