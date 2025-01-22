@@ -39,7 +39,7 @@
     * [Django Auth](learning/django/django-auth.md)
     * [Django User](learning/django/django-user.md)
     * [CSS](learning/django/css.md)
-  * [HTML(HyperText Markup Language)](learning/html-hypertext-markup-language.md)
+  * [HTML](learning/html.md)
   * [Git & Github](learning/git-and-github/README.md)
     * [Marksdown](learning/git-and-github/marksdown.md)
     * [Linux basic commands](learning/git-and-github/linux-basic-commands.md)

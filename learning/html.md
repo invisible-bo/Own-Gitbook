@@ -1,8 +1,9 @@
 ---
 icon: html5
+description: HyperText Markup Language
 ---
 
-# HTML(HyperText Markup Language)
+# HTML
 
 ### 1. HTML 기본구조
 
