@@ -94,8 +94,6 @@ def 특정문자변환(x):
 
 ***
 
-`swapcase()` : 이 메서드는 대문자를 소문자로, 소문자를 대문자로 변환
-
 `enumerate` : 반복 가능한 객체(iterable)를 순회할 때, 인덱스(index)와 해당 값(value)을 \
 &#x20;                          동시에 가져오는 메서드
 
@@ -158,7 +156,25 @@ map(함수, 이터러블)
 2. 함수에 집어넣고 결과를 돌려줌
 3. 결과를 모아서 새로운 객체를 만
 
+***
 
+## 문자열 관련 함수
+
+1. **`lower()`**
+   * 문자열을 모두 소문자로 변환.
+   * 예: `"Hello".lower()` → `"hello"`
+2. **`upper()`**
+   * 문자열을 모두 대문자로 변환.
+   * 예: `"hello".upper()` → `"HELLO"`
+3. **`swapcase()`**
+   * 대문자는 소문자로, 소문자는 대문자로 변환.
+   * 예: `"Hello World".swapcase()` → `"hELLO wORLD"`
+4. **`capitalize()`**
+   * 문자열의 첫 글자를 대문자로 변환하고, 나머지는 소문자로 변환.
+   * 예: `"hello world".capitalize()` → `"Hello world"`
+5. **`title()`**
+   * 각 단어의 첫 글자를 대문자로 변환.
+   * 예: `"hello world".title()` → `"Hello World"`
 
 
 
