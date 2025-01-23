@@ -280,3 +280,28 @@ def solution(array):
 
 
 
+14\.
+
+영어에선 a, e, i, o, u 다섯 가지 알파벳을 모음으로 분류합니다. 문자열 `my_string`이 매개변수로 주어질 때 모음을 제거한 문자열을 return하도록 solution 함수를 완성해주세요.
+
+<pre class="language-python"><code class="lang-python">def solution(my_string):
+    return ''.join(char for char in my_string if char not in 'aeiou')
+    
+# join()은 리스트의 각 요소를 연결하여 문자열을 생성.
+# 앞의 ''는 연결할 때 사이에 아무 것도 넣지 않겠다는 뜻.    
+<strong># my_string의 각 문자를 순회하며 모음을 제외한 문자만 리스트에 담아.
+</strong># 그 리스트를 join()으로 연결해 새로운 문자열을 생성.        
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
