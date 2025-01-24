@@ -24,6 +24,7 @@
         * [\*Customers analytics](learning/machine-learning/machine-learning-types/unsupervised-learning/customers-analytics.md)
     * [Dataset](learning/machine-learning/dataset/README.md)
       * [Data Preprocessing](learning/machine-learning/dataset/data-preprocessing.md)
+  * [LLM](learning/llm.md)
   * [Django](learning/django/README.md)
     * [Web](learning/django/web.md)
     * [Django Project](learning/django/django-project.md)
