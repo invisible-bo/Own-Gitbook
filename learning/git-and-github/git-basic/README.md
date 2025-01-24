@@ -42,6 +42,13 @@ git commit
 gir commit -m "commit message" # Staging Area to Local Repository(committed)
 ```
 
+{% hint style="info" %}
+```
+git branch -M main(master)
+# master 를 main으로 변경
+```
+{% endhint %}
+
 4. **Remote Repository**&#x20;
 
 * GitHub과 같은 서버에 있는 저장소
@@ -88,13 +95,6 @@ git push -u origin main(master)
 
 git push 
 ```
-
-{% hint style="info" %}
-```
-git branch -M main(master)
-# master 를 main으로 변경
-```
-{% endhint %}
 
 ## Remote Repository → Local Repository&#x20;
 
