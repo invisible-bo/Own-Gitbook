@@ -9,11 +9,29 @@ description: How to commit git
 git init #make Local Repository .git폴더 생성(hidden folder)
 ```
 
-### Commit &#x20;
+###
 
-현재 변경  사항을 특정 버전으로 남기는 것
+#### **필수 요소**
 
+1. **`<type>`**: 변경 사항의 종류를 나타냄.
+   * `feat`: 새로운 기능 추가
+   * `fix`: 버그 수정
+   * `docs`: 문서 변경
+   * `style`: 코드 스타일 변경 (공백, 세미콜론 등 비즈니스 로직 무관)
+   * `refactor`: 코드 리팩토링 (기능 변경 없이 구조 개선)
+   * `test`: 테스트 추가 또는 수정
+   * `chore`: 기타 변경사항 (빌드 프로세스나 패키지 설정 등)
+   * `remove` : 파일/디렉토리 삭제
+   * `rename` : 파일/디렉토리 이름 수
+2. **`<description>`**: 변경 내용을 간략히 요약
 
+#### **선택 요소**
+
+* **`<scope>`**: 변경된 파일이나 기능의 범위를 나타냄
+* **본문**: 변경 이유, 상세 설명 등 추가 정보를 작성
+* footer: 관련 이슈 번호나 참고 정보를 추가
+
+***
 
 1. **Working directory**
 
@@ -35,11 +53,24 @@ git add . #현재 folder내의 모든 file들을 Staging Area로 add
 
 3. **Local Repository**
 
-* commit들이 저장되는 곳
+* Commit들이 저장되는 곳
 
 ```python
 git commit     
 gir commit -m "commit message" # Staging Area to Local Repository(committed)
+```
+
+
+
+* Commit convention
+  * 커밋 메시지를 작성할 때 일정한 규칙을 따르는 것
+
+```bash
+type: subject
+
+body
+
+footer
 ```
 
 {% hint style="info" %}
