@@ -98,7 +98,9 @@ git switch main # 먼저 main branch로 이동
 git merge {합치고 싶은 branch name} # branch name을 병합
 ```
 
-#### 병합 중 conflict 발생 시
+***
+
+### Conflict 발생&#x20;
 
 1. CONFLICT (content): Merge conflict in <파일명>
 
@@ -119,14 +121,14 @@ git add {file name}
 git commit
 ```
 
-
-
-#### 병합 이후 상태 확인
+#### 5. 병합 이후 상태 확인
 
 ```bash
 git log
 git log --graph --oneline
 ```
+
+
 
 결과 ex)
 
@@ -142,25 +144,4 @@ git log --graph --oneline
 
 ```bash
 git status로 상태확인
-```
-
-
-
-***
-
-### Vi 편집기
-
-UNIX 및 Linux의 Text편집기
-
-* Command mode
-* Insert mode
-* Ex mode (:로 시작)
-
-```bash
-vi {file name}  # 실행
-i # insert mode
-:w # save
-:q # quit
-:wq or :x #save and quit
-:q! # force quit
 ```

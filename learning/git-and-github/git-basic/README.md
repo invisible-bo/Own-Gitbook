@@ -43,6 +43,7 @@ git add . #현재 folder내의 모든 file들을 Staging Area로 add
 ```python
 git commit     
 gir commit -m "commit message" # Staging Area to Local Repository(committed)
+                               # -m을 쓰면 한줄짜리 commit message
 ```
 
 
