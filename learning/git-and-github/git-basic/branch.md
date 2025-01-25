@@ -9,7 +9,7 @@ description: 브랜치
 ```bash
 git branch {branch name}
 # branch 생성
-git switch -b {branch name}
+git switch -c {branch name}
 # branch 생성과 동시에 이동
 git swtich {brand name}
 # 해당 branch로 이동
