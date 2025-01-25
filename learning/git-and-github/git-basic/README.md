@@ -1,6 +1,6 @@
 ---
 icon: github
-description: How to commit git
+description: How to stacommit git
 ---
 
 # Git basic
@@ -9,27 +9,12 @@ description: How to commit git
 git init #make Local Repository .git폴더 생성(hidden folder)
 ```
 
-###
-
-#### **필수 요소**
-
-1. **`<type>`**: 변경 사항의 종류를 나타냄.
-   * `feat`: 새로운 기능 추가
-   * `fix`: 버그 수정
-   * `docs`: 문서 변경
-   * `style`: 코드 스타일 변경 (공백, 세미콜론 등 비즈니스 로직 무관)
-   * `refactor`: 코드 리팩토링 (기능 변경 없이 구조 개선)
-   * `test`: 테스트 추가 또는 수정
-   * `chore`: 기타 변경사항 (빌드 프로세스나 패키지 설정 등)
-   * `remove` : 파일/디렉토리 삭제
-   * `rename` : 파일/디렉토리 이름 수
-2. **`<description>`**: 변경 내용을 간략히 요약
-
-#### **선택 요소**
-
-* **`<scope>`**: 변경된 파일이나 기능의 범위를 나타냄
-* **본문**: 변경 이유, 상세 설명 등 추가 정보를 작성
-* footer: 관련 이슈 번호나 참고 정보를 추가
+{% hint style="info" %}
+```
+git branch -M main(master)
+# master 를 main으로 변경
+```
+{% endhint %}
 
 ***
 
@@ -66,21 +51,34 @@ gir commit -m "commit message" # Staging Area to Local Repository(committed)
   * 커밋 메시지를 작성할 때 일정한 규칙을 따르는 것
 
 ```bash
-type: subject
+<type>(<optional scope>): <description>
 
-body
+[optional body]
 
-footer
+[optional footer(s)]
 ```
 
-{% hint style="info" %}
-```
-git branch -M main(master)
-# master 를 main으로 변경
-```
-{% endhint %}
+#### **필수 요소**
 
-4. **Remote Repository**&#x20;
+1. **`<type>`**: 변경 사항의 종류를 나타냄.
+   * `feat`: 새로운 기능 추가
+   * `fix`: 버그 수정
+   * `docs`: 문서 변경
+   * `style`: 코드 스타일 변경 (공백, 세미콜론 등 비즈니스 로직 무관)
+   * `refactor`: 코드 리팩토링 (기능 변경 없이 구조 개선)
+   * `test`: 테스트 추가 또는 수정
+   * `chore`: 기타 변경사항 (빌드 프로세스나 패키지 설정 등)
+2. **`<description>`**: 변경 내용을 간략히 요약.
+
+#### **선택 요소**
+
+* **`<scope>`**: 변경된 파일이나 기능의 범위를 나타냄.
+* **본문**: 변경 이유, 상세 설명 등 추가 정보를 작성.
+* **푸터**: 관련 이슈 번호나 참고 정보를 추가.
+
+***
+
+**4.Remote Repository**&#x20;
 
 * GitHub과 같은 서버에 있는 저장소
 
