@@ -45,6 +45,7 @@
   * [Git & Github](learning/git-and-github/README.md)
     * [Marksdown](learning/git-and-github/marksdown.md)
     * [Linux basic commands](learning/git-and-github/linux-basic-commands.md)
+    * [VI(visual editor)](learning/git-and-github/vi-visual-editor.md)
     * [Git basic](learning/git-and-github/git-basic/README.md)
       * [Branch](learning/git-and-github/git-basic/branch.md)
   * [Docker](learning/docker.md)
