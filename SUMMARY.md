@@ -8,6 +8,7 @@
     * [Python Loop](learning/python/python-loop.md)
     * [Python Function](learning/python/python-function/README.md)
       * [Etc functions and method](learning/python/python-function/etc-functions-and-method.md)
+      * [String-related functions](learning/python/python-function/string-related-functions.md)
     * [Python scope](learning/python/python-scope.md)
     * [Python OOP](learning/python/python-oop.md)
     * [PEP 8 Style](learning/python/pep-8-style.md)
