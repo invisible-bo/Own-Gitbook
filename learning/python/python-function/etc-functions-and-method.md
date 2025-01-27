@@ -9,25 +9,11 @@ description: '메서드 : 특정 객체와 연관된 함수'
 `count` 메서드 : Python의 리스트(List) 객체가 제공하는 내장 메서드. \
 특정 값이 리스트에 몇 번 나타나는지 세어주는 기능
 
-ex)&#x20;
-
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
-
 ```python
 def solution(array, n):
     if 1 <= len(array) <= 100 and all(0 <= element <= 1000 for element in array) and 0 <= n <= 1000:
         return array.count(n)
 ```
-
-`replace` : 문자열에서 특정 부분 문자열을 다른 문자열로 대체하는 Python의 문자열 메서드
-
-```python
-string.replace(old, new[, count]) 
-```
-
-* **`old`**: 교체하고 싶은 문자열(찾을 문자열).
-* **`new`**: `old`를 대체할 문자열.
-* **`count`** _(선택적)_: 교체를 수행할 최대 횟수. (생략하면 모든 `old`를 `new`로 교체)
 
 ***
 
@@ -175,10 +161,23 @@ map(함수, 이터러블)
 5. **`title()`**
    * 각 단어의 첫 글자를 대문자로 변환.
    * 예: `"hello world".title()` → `"Hello World"`
+6. `replace` : 문자열에서 특정 부분 문자열을 다른 문자열로 대체하는 Python의 문자열 메서드
 
+<pre class="language-python"><code class="lang-python"><strong>string.replace(old, new, count) 
+</strong></code></pre>
 
+* **`old`**: 교체하고 싶은 문자열(찾을 문자열).
+* **`new`**: `old`를 대체할 문자열.
+* **`count`** _(선택적)_: 교체를 수행할 최대 횟수. (생략하면 모든 `old`를 `new`로 교체)
+* `replace()`는 **새로운 문자열**을 반환
+* 원본 문자열은 **불변(immutable)** 이라, 바뀌지 않음
 
+7. `char.isdigit()` : 문자열이 숫자(10진수)로 구성되어 있는지 확인하는 데 사용\
+   &#x20;                                      **`True`** 또는 **`False`** 값을 반환
 
+* 문자열이 **숫자**로만 구성되어 있으면 `True`를 반환.
+* 공백, 알파벳, 특수문자 등 숫자가 아닌 문자가 포함되어 있으면 `False`를 반환.
+* 문자열의 길이가 1 이상이어도, 문자열 전체가 숫자면 `True`
 
 
 
