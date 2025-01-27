@@ -27,6 +27,7 @@
       * [Data Preprocessing](learning/machine-learning/dataset/data-preprocessing.md)
   * [LLM](learning/llm/README.md)
     * [\*LLM GPT example](learning/llm/llm-gpt-example.md)
+    * [\*LLM Llama2 example](learning/llm/llm-llama2-example.md)
   * [Django](learning/django/README.md)
     * [Web](learning/django/web.md)
     * [Django Project](learning/django/django-project.md)
