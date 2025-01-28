@@ -26,7 +26,7 @@
 * Database-abstraction-API(데이터베이스 추상화 API)
 * 쉽게말해 Django ORM으로 Database API를 사용해서 데이터베이스를 조작
 
-### \*\*Manager\*\*
+### Manager
 
 * Model 클래스를 생성하면 Django는 자동적으로 CRUD(Create, Read, Update, Delete) \
   할 수 있는 Database API를 제공

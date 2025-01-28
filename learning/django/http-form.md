@@ -1,4 +1,4 @@
-# HTTP Form
+# HTTP
 
 *   `action`과 `method`
 

@@ -7,6 +7,8 @@ icon: user-bounty-hunter
 
 # Django DRF
 
+## Django DRF
+
 기존의 Django
 
 * Django는 Web App을 빠르게 개발하기 위한 고수준의 web framework
@@ -22,6 +24,8 @@ icon: user-bounty-hunter
 * DRF == 흔히 말하는 RESTful API를 Django로 구축하기 위한 확장 Framework
 * **Django**는 주로 HTML, CSS, JavaScript로 구성된 웹 페이지를 반환하는 반면, \
   **DRF**는 **JSON** 형식으로 데이터를 주고받는 **RESTful API**를 생성하는 데 사용
+
+***
 
 
 
