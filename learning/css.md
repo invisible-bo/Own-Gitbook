@@ -1,11 +1,15 @@
 ---
-description: CSS (Cascading Style Sheets)
+description: Cascading Style Sheets
+icon: css3
 ---
 
 # CSS
 
-* HTML이 웹 페이지의 **구조**(텍스트, 이미지 등)를 정의
+## CSS(Cascading Style Sheets)
+
+* HTML은 웹 페이지의 **구조**(텍스트, 이미지 등)를 정의
 * CSS는 이 구조를 **어떻게 보일지**를 지정
+* HTML 요소의 스타일과 레이아웃을 정의하는 스타일 시트 언어
 
 ***
 

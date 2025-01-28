@@ -5,6 +5,10 @@ description: HyperText Markup Language
 
 # HTML
 
+## HTML(Hyper Text Markup Language)
+
+* 웹 페이지의 구조를 정의하고 콘텐츠를 표시하는 데 사용되는 Markup Language
+
 ### 1. HTML 기본구조
 
 ```html

@@ -37,7 +37,9 @@ MVC:
   * MVC에서의 Controller
   * **메인 비지니스 로직**을 담당(Model과 Template의  **중간을 연결**하는 역할)
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+
 
 요청(request)이 들어오면
 
